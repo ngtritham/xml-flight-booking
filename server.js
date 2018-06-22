@@ -1,6 +1,6 @@
-var sys = require('sys');
-var http = require('http');
-var router = require('./router');
+let sys = require('sys');
+let http = require('http');
+let router = require('./router');
 
 // Handle your routes here, put static pages in ./public and they will server
 router.register('/', function(req, res) {
@@ -14,7 +14,7 @@ router.register('/test', function(req, res) {
 });
 
 // We need a server which relies on our router
-var server = http.createServer(function (req, res) {
+let server = http.createServer(function (req, res) {
   handler = router.route(req);
   handler.process(req, res);
 });

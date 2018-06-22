@@ -14,7 +14,10 @@ const server = http.createServer(function (req, res) {
 });
 
 // Start it up
-server.listen(port, () => {
-  console.log('GUI service is serving on port: ' + port);
+server.listen(port, (err) => {
+  if(err != null)
+      console.log('==> Error: ' + err)
+  else
+      console.log('GUI service is serving on port: ' + port)
 });
 

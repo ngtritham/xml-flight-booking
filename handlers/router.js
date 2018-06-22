@@ -1,7 +1,7 @@
-var handlerFactory = require('./handler');
-var fs = require('fs');
-var parser = require('url');
-var handlers = {};
+let handlerFactory = require('./handler');
+let fs = require('fs');
+let parser = require('url');
+let handlers = {};
 
 exports.clear = function() {
   handlers = {};
@@ -13,15 +13,15 @@ exports.register = function(url, method) {
 
 exports.route = function(req) {
   url = parser.parse(req.url, true);
-  var handler = handlers[url.pathname];
+  let handler = handlers[url.pathname];
   if (!handler) handler = this.missing(req)
   return handler;
 }
 
 exports.missing = function(req) {
   // Try to read the file locally, this is a security hole, yo /../../etc/passwd
-  var url = parser.parse(req.url, true);
-  var path = __dirname + "/public" + url.pathname
+  let url = parser.parse(req.url, true);
+  let path = __dirname + "/public" + url.pathname
   try {    
     data = fs.readFileSync(path);
     mime = req.headers.accepts || 'text/html'

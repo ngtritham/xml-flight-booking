@@ -1,0 +1,25 @@
+{
+  "name": "xml-flight-booking",
+  "version": "1.0.0",
+  "description": "Flight booking Web service",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ngtritham/xml-flight-booking.git"
+  },
+  "author": "1512528 - 1512545",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ngtritham/xml-flight-booking/issues"
+  },
+  "homepage": "https://github.com/ngtritham/xml-flight-booking#readme",
+  "dependencies": {
+    "xml-js": "^1.6.4",
+    "xml2js": "^0.4.19",
+    "xmldom": "^0.1.27"
+  }
+}

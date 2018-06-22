@@ -1,8 +1,9 @@
 const http = require('http');
 const router = require('.././handlers/router');
 const port = 3001;
-let XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-let xhr = new XMLHttpRequest();
+const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+const xhr = new XMLHttpRequest();
+
 // Handle your routes here, put static pages in ./public and they will server
 router.register('/', function(req, res) {
   xhr.onreadystatechange = function() {
@@ -28,7 +29,10 @@ const server = http.createServer(function (req, res) {
 });
 
 // Start it up
-server.listen(port, () => {
-  console.log('BUS service is serving on port: ' + port);
+server.listen(port, (err) => {
+  if(err != null)
+      console.log('==> Error: ' + err)
+  else
+      console.log('BUS service is serving on port: ' + port)
 });
 
