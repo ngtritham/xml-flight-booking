@@ -1,8 +1,22 @@
 const http = require('http');
 const router = require('.././handlers/router');
 const port = 3001;
+let XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+let xhr = new XMLHttpRequest();
 // Handle your routes here, put static pages in ./public and they will server
 router.register('/', function(req, res) {
+  xhr.onreadystatechange = function() {
+    console.log("State: " + this.readyState);
+    
+    //if (this.readyState === 4) {
+      console.log("Complete.\nBody length: " + this.responseText.length);
+      console.log("Body:\n" + this.responseText);
+    //}
+  };
+  xhr.open("GET", "http://localhost:3000/", false);
+  xhr.send();
+ 
+
   res.writeHead(200, {'Content-Type': 'text/plain'});
   res.end('Running BUS Service !!!!');
 });

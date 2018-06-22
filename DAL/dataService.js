@@ -3,7 +3,7 @@ const router = require('.././handlers/router');
 const port = 3000;
 // Handle your routes here, put static pages in ./public and they will server
 router.register('/', function(req, res) {
-  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.writeHead(200, {'Content-Type': 'text/xml'});
   res.end('Running DATA Service !!!!');
 });
 
