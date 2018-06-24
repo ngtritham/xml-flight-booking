@@ -20,6 +20,7 @@
   "dependencies": {
     "xml-js": "^1.6.4",
     "xml2js": "^0.4.19",
-    "xmldom": "^0.1.27"
+    "xmldom": "^0.1.27",
+    "xmlhttprequest": "^1.8.0"
   }
 }
