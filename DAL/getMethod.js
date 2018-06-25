@@ -2,13 +2,19 @@
 
 const fs = require('fs')
 const xml2js = require('xml2js')
-const parser = new xml2js.Parser()
 const path = __dirname;
 
 
 //Get danh sách cửa hàng
 const get_DSChuyenBay = () => {
-    return fs.readFileSync(__dirname + '/DATA/flightInfo.xml')
+    let ret;
+    data = fs.readFileSync(__dirname + '/DATA/flightInfo.xml');
+    console.log(data)
+    xml2js.parseString(data, function (err, result) {
+        ret = result
+    });
+
+    return ret;
 }
 
 /*

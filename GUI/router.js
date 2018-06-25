@@ -1,4 +1,4 @@
-let handlerFactory = require('../handlers/handler');
+let handlerFactory = require('../LIB/handler');
 let fs = require('fs');
 let parser = require('url');
 let handlers = {};
