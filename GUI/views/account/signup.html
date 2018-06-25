@@ -25,7 +25,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" id='brand' href="#">Brand</a>
+                        <a class="navbar-brand" id='brand' href="/home">Tham's Airline</a>
                     </div>
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -34,6 +34,12 @@
                             <li class="active">
                                 <a href="#">Link
                                     <span class="sr-only">(current)</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav navbar-nav">
+                            <li class="disactive">
+                                <a href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 </a>
                             </li>
                         </ul>
@@ -53,11 +59,12 @@
                                 </a>
                                 <ul class="dropdown-menu" id='user'>
                                     <li>
-                                        <a href="#">Đăng ký</a>
+                                        <a href="/account/login">Đăng nhập</a>
                                     </li>
                                     <li>
-                                        <a href="#">Đăng nhập</a>
+                                        <a href="/account/signup">Đăng ký</a>
                                     </li>
+
                                 </ul>
                             </li>
                         </ul>
@@ -69,55 +76,54 @@
         </div>
 
         <div class='row' id='FlyDetail'>
-            <div id='dsChuyenBay' class="col-md-2">
-                Danh sách chuyến bay
+            <div class="list-group col-md-2">
+                <a href="/" class="list-group-item">Tra cứu chuyến bay</a>
+                <a href="#" class="list-group-item">Xem lịch bay</a>
+                <a href="#" class="list-group-item">Xem thông tin vé</a>
+                <a href="#" class="list-group-item">Vestibulum at eros</a>
             </div>
+
+
             <div id='chiTietChuyenBay' class="col-md-10">
                 <div class="panel panel-default">
                     <!-- Default panel contents -->
-                    <div class="panel-heading">Mã chuyến bay - Vé</div>
+                    <div class="panel-heading">Đăng ký tài khoản</div>
+                    <div class="row" style="margin-top: 30px; margin-bottom: 30px">
+                        <div class="col-md-8 col-md-offset-2">
+                            <form method="POST" action="/account/signup">
+                                <div class="form-group">
+                                    <label for="Ten">Họ Tên</label>
+                                    <input name="Ten" type="text" class="form-control" id="name" placeholder="Tên">
+                                </div>
+                                <div class="form-group">
+                                    <label for="SDT">SĐT</label>
+                                    <input name="SDT" type="text" class="form-control" id="phone" placeholder="Số điện thoại">
+                                </div>
+                                <div class="form-group">
+                                    <label for="Email">Email</label>
+                                    <input name="Email" type="email" class="form-control" id="email" placeholder="Email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="username">Username</label>
+                                    <input name="username" type="text" class="form-control" id="username" placeholder="Username">
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">Password</label>
+                                    <input name="password" type="password" class="form-control" id="password" placeholder="Password">
+                                </div>
 
-                    <div class="col-md-6">
-                        <table class="table" style="border: solid;">
-                            <tr>
-                                <h3>Vé 1</h3>
-                            </tr>
-                            <tr>
-                                <td>Chuyến bay:...</td>
-                                <td>Hành khách:...</td>
-                            </tr>
-                            <tr>
-                                <td>CMND:...</td>
-                                <td>Điện thoại:...</td>
-                            </tr>
-                            <tr>
-                                <td>Hạng vé:...</td>
-                                <td>Giá tiền:...</td>
-                            </tr>
-                        </table>
+                                <div class="row">
+                                    <div class="col-md-12 text-center">
+                                        <button type="submit" class="btn btn-success text-center">Đăng ký</button>
+                                    </div>
+                                </div>
 
-                        <button style="align-content: center" type="button" class="btn btn-primary">Đặt</button>
+                            </form>
+                        </div>
+
                     </div>
-                    <div class="col-md-6">
-                        <table class="table" style="border: solid;">
-                            <tr>
-                                    <h3>Vé 2</h3>
-                            </tr>
-                            <tr>
-                                <td>Chuyến bay:...</td>
-                                <td>Hành khách:...</td>
-                            </tr>
-                            <tr>
-                                <td>CMND:...</td>
-                                <td>Điện thoại:...</td>
-                            </tr>
-                            <tr>
-                                <td>Hạng vé:...</td>
-                                <td>Giá tiền:...</td>
-                            </tr>
-                        </table>
-                        <button style="align-content: center" type="button" class="btn btn-primary">Đặt</button>
-                    </div>
+
+
                 </div>
             </div>
         </div>

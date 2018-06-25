@@ -23,6 +23,43 @@ router.register('/addPhieuDatCho', function (req, res) {
   res.end()
 });
 
+router.register('/account', function (req, res) {
+  if (req.method == 'GET') {
+
+  }
+
+  if (req.method == 'POST') {
+    let body
+    req.on('data', function (data) {
+      body = JSON.parse(data);
+    });
+    req.on('end', function () {
+      //Do something
+      postMethod.addTaiKhoan(body)
+    });
+  }
+});
+
+router.register('/flyingDetail', function (req, res) {
+  if (req.method == 'GET') {
+    //auth
+  }
+
+  if (req.method == 'POST') {
+    let body
+    req.on('data', function (data) {
+      body = JSON.parse(data);
+    });
+    req.on('end', function () {
+      //Do something
+
+    });
+  }
+
+  res.writeHead(200, { 'Content-Type': 'text/plan' });
+  res.end();
+});
+
 // We need a server which relies on our router
 const server = http.createServer(function (req, res) {
   handler = router.route(req);

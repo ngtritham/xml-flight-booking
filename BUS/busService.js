@@ -9,28 +9,61 @@ router.register('/', function (req, res) {
 });
 
 router.register('/DSChuyenBay', function (req, res) {
-  /*
-  xhr.onreadystatechange = function () {
-    if (this.readyState === 4) {
-      //console.log("Complete.\nBody length: " + this.responseText.length);
-      //console.log("Body:\n" + this.responseText);
-
-      //build table
-      let ds;
-      xml2js.parseString(this.responseText, function (err, result) {
-        ds = result.Danh_sach_chuyen_bay
-      });
-      res.writeHead(200, { 'Content-Type': 'text/json' });
-      res.end(JSON.stringify(ds));
-    }
-  };
-  xhr.open("GET", "http://localhost:3000/getDSChuyenBay", false);
-  xhr.send();
-  */
-
   let ds = method.get("http://localhost:3000/getDSChuyenBay", "");
   res.writeHead(200, { 'Content-Type': 'text/json' });
   res.end(JSON.stringify(ds.Danh_sach_chuyen_bay));
+});
+
+router.register('/account', function (req, res) {
+  if (req.method == 'GET') {
+    //auth
+  }
+
+  if (req.method == 'POST') {
+    let body
+    req.on('data', function (data) {
+      body = JSON.parse(data);
+    });
+    req.on('end', function () {
+      //Do something
+      if (body.ID == undefined ||
+        body.username == undefined ||
+        body.password == undefined ||
+        body.Ten == undefined ||
+        body.SDT == undefined ||
+        body.Email == undefined ||
+        body.isAdmin == undefined)
+        return
+
+      method.post('http://localhost:3000/account', body)
+    });
+  }
+
+  res.writeHead(200, { 'Content-Type': 'text/plan' });
+  res.end();
+});
+
+router.register('/flyingDetail', function (req, res) {
+  if (req.method == 'GET') {
+    let body
+    req.on('data', function (data) {
+      body = JSON.parse(data);
+    });
+    req.on('end', function () {
+    });
+  }
+
+  if (req.method == 'POST') {
+    let body
+    req.on('data', function (data) {
+      body = JSON.parse(data);
+    });
+    req.on('end', function () {
+    });
+  }
+
+  res.writeHead(200, { 'Content-Type': 'text/plan' });
+  res.end();
 });
 
 router.register('/chiTietChuyenBay')
