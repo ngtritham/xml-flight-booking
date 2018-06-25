@@ -22,6 +22,27 @@ router.register('/', function(req, res) {
   res.end('Running BUS Service !!!!');
 });
 
+router.register('/them', function(req, res) {
+/*  xhr.onreadystatechange = function() {
+    console.log("State: " + this.readyState);
+    
+    //if (this.readyState === 4) {
+      //console.log("Complete.\nBody length: " + this.responseText.length);
+      console.log("Body:\n" + this.responseXML);
+      
+    //}
+  };
+*/
+  //POST Method
+  xhr.open("POST", "http://localhost:3000/add", false);
+  xhr.setRequestHeader("Content-Type", "application/json; charset=UTF-8")
+  let data = JSON.stringify({"email":"tomb@raider.com","name":"LaraCroft"});
+  xhr.send(data);
+ 
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.end('Send');
+});
+
 // We need a server which relies on our router
 const server = http.createServer(function (req, res) {
   handler = router.route(req);
