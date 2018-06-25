@@ -1,5 +1,5 @@
 const http = require('http');
-const router = require('.././handlers/router');
+const router = require('./router');
 const port = 3001;
 const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 const xhr = new XMLHttpRequest();

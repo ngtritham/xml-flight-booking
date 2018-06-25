@@ -1,9 +1,10 @@
 const http = require('http');
-const router = require('.././handlers/router');
+const router = require('./router');
 const fs = require('fs')
 const port = 3002;
 // Handle your routes here, put static pages in ./public and they will server
 router.register('/', function(req, res) {
+  console.log(req.method)
   let data = fs.readFileSync(__dirname + '/index.html')
   res.writeHead(200, {'Content-Type': 'text/html'});
   res.end(data);
@@ -22,4 +23,3 @@ server.listen(port, (err) => {
   else
       console.log('GUI service is serving on port: ' + port)
 });
-

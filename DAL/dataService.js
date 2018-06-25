@@ -1,5 +1,5 @@
 const http = require('http');
-const router = require('.././handlers/router');
+const router = require('./router');
 const getMethod = require('./getMethod')
 const port = 3000;
 // Handle your routes here, put static pages in ./public and they will server
@@ -31,4 +31,3 @@ server.listen(port, (err) => {
   else
       console.log('DATA service is serving on port: ' + port)
 });
-

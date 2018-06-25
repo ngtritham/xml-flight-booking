@@ -23,7 +23,6 @@ const get_DanhSach_Tivi = () => {
             danhSach_Tivi.push({ 'Tivi': result.Tivi.$ })
         })
     })
-    console.log(danhSach_Tivi)
 
     let builder = new xml2js.Builder()
     let xml = builder.buildObject(danhSach_Tivi)
