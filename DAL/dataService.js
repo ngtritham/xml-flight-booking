@@ -1,6 +1,8 @@
 const http = require('http');
 const router = require('./router');
 const getMethod = require('./getMethod')
+const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+const xhr = new XMLHttpRequest();
 const port = 3000;
 // Handle your routes here, put static pages in ./public and they will server
 router.register('/', function (req, res) {
@@ -8,29 +10,11 @@ router.register('/', function (req, res) {
   res.end('Running DATA Service !!!!');
 });
 
-router.register('/getCuaHang', function (req, res) {
+router.register('/getDSChuyenBay', function (req, res) {
+  let data = getMethod.get_DSChuyenBay()
+  console.log(data)
   res.writeHead(200, { 'Content-Type': 'text/xml' });
-  res.end(getMethod.get_CuaHang());
-});
-
-router.register('/getDSTivi', function (req, res) {
-  res.writeHead(200, { 'Content-Type': 'text/xml' });
-  res.end(getMethod.get_DanhSach_Tivi());
-});
-
-router.register('/add', function (req, res) {
-  console.log("POST");
-  var body;
-  req.on('data', function (data) {
-    body = data;
-    console.log(body);
-  });
-  req.on('end', function () {
-    console.log("Body: " + body);
-  });
-
-  res.writeHead(200, { 'Content-Type': 'text/xml' });
-  res.end();
+  res.end(data)
 });
 
 // We need a server which relies on our router

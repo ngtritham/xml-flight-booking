@@ -1,0 +1,27 @@
+<!-- BM 2 -->
+<Danh_sach_ve_chuyen_bay>
+    <Ve_chuyen_bay Ma_chuyen_bay="CB01">
+        <Thong_tin_ve Hang_ve="1" Gia_tien="1.000.000 VND"></Thong_tin_ve>
+        <Thong_tin_hanh_khach Hanh_khach="Nguyễn Trí Thâm" CMND="301679428" Dien_thoai="0123456789"></Thong_tin_hanh_khach>
+    </Ve_chuyen_bay>
+
+    <Ve_chuyen_bay Ma_chuyen_bay="CB02">
+        <Thong_tin_ve Hang_ve="1" Gia_tien="3.000.000 VND"></Thong_tin_ve>
+        <Thong_tin_hanh_khach Hanh_khach="Nguyễn Văn Tài" CMND="301679429" Dien_thoai="0168429"></Thong_tin_hanh_khach>
+    </Ve_chuyen_bay>
+
+    <Ve_chuyen_bay Ma_chuyen_bay="CB03">
+        <Thong_tin_ve Hang_ve="2" Gia_tien="655.000 VND"></Thong_tin_ve>
+        <Thong_tin_hanh_khach Hanh_khach="Trần Trụi" CMND="684259428" Dien_thoai="0921658459"></Thong_tin_hanh_khach>
+    </Ve_chuyen_bay>
+
+    <Ve_chuyen_bay Ma_chuyen_bay="CB04">
+        <Thong_tin_ve Hang_ve="2" Gia_tien="750.000 VND"></Thong_tin_ve>
+        <Thong_tin_hanh_khach Hanh_khach=" Phan Long Tứ" CMND="365845917" Dien_thoai="0929642587"></Thong_tin_hanh_khach>
+    </Ve_chuyen_bay>
+
+    <Ve_chuyen_bay Ma_chuyen_bay="CB05">
+        <Thong_tin_ve Hang_ve="1" Gia_tien="4.000.000 VND"></Thong_tin_ve>
+        <Thong_tin_hanh_khach Hanh_khach="Lê Tào Tháo" CMND="7512681546" Dien_thoai="0907359648"></Thong_tin_hanh_khach>
+    </Ve_chuyen_bay>
+</Danh_sach_ve_chuyen_bay>

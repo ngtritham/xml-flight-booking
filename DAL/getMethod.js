@@ -2,17 +2,16 @@
 
 const fs = require('fs')
 const xml2js = require('xml2js')
-
+const parser = new xml2js.Parser()
 const path = __dirname;
 
-let danhSach_Tivi = []
 
 //Get danh sách cửa hàng
-const get_CuaHang = () => {
-    let data = fs.readFileSync(path + '/Cua_hang/Cua_hang.xml', 'utf-8')
-    return data
+const get_DSChuyenBay = () => {
+    return fs.readFileSync(__dirname + '/DATA/flightInfo.xml')
 }
 
+/*
 const get_DanhSach_Tivi = () => {
     fs.readdirSync(path + '/Tivi/').forEach(file => {
         let filePath = path + '/Tivi/' + file
@@ -29,8 +28,8 @@ const get_DanhSach_Tivi = () => {
 
     return xml
 }
+*/
 
 module.exports = {
-    get_CuaHang: get_CuaHang,
-    get_DanhSach_Tivi: get_DanhSach_Tivi
+    get_DSChuyenBay: get_DSChuyenBay
 }

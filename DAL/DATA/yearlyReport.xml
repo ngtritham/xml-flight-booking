@@ -1,0 +1,17 @@
+<!-- BM 5.2 -->
+<Bao_cao_doanh_thu_nam Nam="2018">
+    <Danh_sach_ban_ve>
+        <Ban_ve STT="1" Thang="1" So_chuyen_bay="1500" Ty_le="1500/2000" Doanh_thu="46.016.000.000 VND"></Ban_ve>
+        <Ban_ve STT="2" Thang="2" So_chuyen_bay="1543" Ty_le="1543/2000" Doanh_thu="53.678.000.000 VND"></Ban_ve>
+        <Ban_ve STT="3" Thang="3" So_chuyen_bay="1426" Ty_le="1426/2000" Doanh_thu="42.945.000.000 VND"></Ban_ve>
+        <Ban_ve STT="4" Thang="4" So_chuyen_bay="1806" Ty_le="1806/2000" Doanh_thu="88.946.000.000 VND"></Ban_ve>
+        <Ban_ve STT="5" Thang="5" So_chuyen_bay="1160" Ty_le="1160/2000" Doanh_thu="35.468.000.000 VND"></Ban_ve>
+        <Ban_ve STT="6" Thang="6" So_chuyen_bay="1684" Ty_le="1684/2000" Doanh_thu="57.956.000.000 VND"></Ban_ve>
+        <Ban_ve STT="7" Thang="7" So_chuyen_bay="1230" Ty_le="1230/2000" Doanh_thu="40.684.000.000 VND"></Ban_ve>
+        <Ban_ve STT="8" Thang="8" So_chuyen_bay="1555" Ty_le="1555/2000" Doanh_thu="55.358.000.000 VND"></Ban_ve>
+        <Ban_ve STT="9" Thang="9" So_chuyen_bay="1531" Ty_le="1531/2000" Doanh_thu="54.684.000.000 VND"></Ban_ve>
+        <Ban_ve STT="10" Thang="10" So_chuyen_bay="1436" Ty_le="1436/2000" Doanh_thu="43.368.000.000 VND"></Ban_ve>
+        <Ban_ve STT="11" Thang="11" So_chuyen_bay="1354" Ty_le="1354/2000" Doanh_thu="37.648.000.000 VND"></Ban_ve>
+        <Ban_ve STT="12" Thang="12" So_chuyen_bay="1498" Ty_le="1498/2000" Doanh_thu="56.649.000.000 VND"></Ban_ve>
+    </Danh_sach_ban_ve>
+</Bao_cao_doanh_thu_nam>
