@@ -1,10 +1,12 @@
 const http = require('http');
 const router = require('.././handlers/router');
+const fs = require('fs')
 const port = 3002;
 // Handle your routes here, put static pages in ./public and they will server
 router.register('/', function(req, res) {
-  res.writeHead(200, {'Content-Type': 'text/plain'});
-  res.end('Running GUI Service !!!!');
+  let data = fs.readFileSync(__dirname + '/index.html')
+  res.writeHead(200, {'Content-Type': 'text/html'});
+  res.end(data);
 });
 
 // We need a server which relies on our router
