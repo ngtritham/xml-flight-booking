@@ -1,8 +1,11 @@
-<!-- BM 3 -->
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Danh_sach_phieu_dat_cho>
-    <Phieu_dat_cho Ma_chuyen_bay="CB01" Hanh_khach="Nguyễn Hữu Thịnh" CMND="310364859" Dien_thoai="01234113114" Hang_ve="2" Gia_tien="550.000 VND"></Phieu_dat_cho>
-    <Phieu_dat_cho Ma_chuyen_bay="CB02" Hanh_khach="Trần Lê Phương Thảo" CMND="316784859" Dien_thoai="0168425621" Hang_ve="1" Gia_tien="2.500.000 VND"></Phieu_dat_cho>
-    <Phieu_dat_cho Ma_chuyen_bay="CB03" Hanh_khach="Nguyễn Duy Thắng" CMND="3103613894" Dien_thoai="0125973654" Hang_ve="2" Gia_tien="650.000 VND"></Phieu_dat_cho>
-    <Phieu_dat_cho Ma_chuyen_bay="CB04" Hanh_khach="Khưu Quốc Thành" CMND="684264859" Dien_thoai="0902684259" Hang_ve="1" Gia_tien="2.000.000 VND"></Phieu_dat_cho>
-    <Phieu_dat_cho Ma_chuyen_bay="CB05" Hanh_khach="Barack Obama" CMND="536964859" Dien_thoai="0909132658" Hang_ve="1" Gia_tien="3.400.000 VND"></Phieu_dat_cho>
+  <Phieu_dat_cho Ma_chuyen_bay="CB01" Hanh_khach="Nguyễn Hữu Thịnh" CMND="310364859" Dien_thoai="01234113114" Hang_ve="2" Gia_tien="550.000 VND"/>
+  <Phieu_dat_cho Ma_chuyen_bay="CB02" Hanh_khach="Trần Lê Phương Thảo" CMND="316784859" Dien_thoai="0168425621" Hang_ve="1" Gia_tien="2.500.000 VND"/>
+  <Phieu_dat_cho Ma_chuyen_bay="CB03" Hanh_khach="Nguyễn Duy Thắng" CMND="3103613894" Dien_thoai="0125973654" Hang_ve="2" Gia_tien="650.000 VND"/>
+  <Phieu_dat_cho Ma_chuyen_bay="CB04" Hanh_khach="Khưu Quốc Thành" CMND="684264859" Dien_thoai="0902684259" Hang_ve="1" Gia_tien="2.000.000 VND"/>
+  <Phieu_dat_cho Ma_chuyen_bay="CB05" Hanh_khach="Barack Obama" CMND="536964859" Dien_thoai="0909132658" Hang_ve="1" Gia_tien="3.400.000 VND"/>
+  <Phieu_dat_cho Ma_chuyen_bay="CB03" Hanh_khach="Barack Obama" CMND="536964859" Hang_ve="1" Gia_tien="3.400.000 VND"/>
+  <Phieu_dat_cho Ma_chuyen_bay="CB03" Hanh_khach="Barack Obama" CMND="536964859" Hang_ve="1" Gia_tien="3.400.000 VND"/>
+  <Phieu_dat_cho Ma_chuyen_bay="CB03" Hanh_khach="Barack Obama" CMND="536964859" Hang_ve="1" Gia_tien="3.400.000 VND"/>
 </Danh_sach_phieu_dat_cho>
