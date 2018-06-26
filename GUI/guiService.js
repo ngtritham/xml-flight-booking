@@ -61,6 +61,52 @@ router.register('/account/login', function (req, res) {
   res.end(data);
 });
 
+router.register('/account/profile', function (req, res) {
+  console.log(req.method + "   " + req.url)
+  let data = fs.readFileSync(__dirname + '/views/account/profile.html')
+  res.writeHead(200, {
+    'Content-Type': 'text/html'
+  });
+  res.end(data);
+});
+
+router.register('/report/monthlyReport', function (req, res) {
+  console.log(req.method + "   " + req.url)
+  let data = fs.readFileSync(__dirname + '/views/report/monthlyReport.html')
+  res.writeHead(200, {
+    'Content-Type': 'text/html'
+  });
+  res.end(data);
+});
+
+router.register('/report/yearlyReport', function (req, res) {
+  console.log(req.method + "   " + req.url)
+  let data = fs.readFileSync(__dirname + '/views/report/yearlyReport.html')
+  res.writeHead(200, {
+    'Content-Type': 'text/html'
+  });
+  res.end(data);
+});
+
+router.register('/booking/ticket', function (req, res) {
+  console.log(req.method + "   " + req.url)
+  let data = fs.readFileSync(__dirname + '/views/booking/ticket.html')
+  res.writeHead(200, {
+    'Content-Type': 'text/html'
+  });
+  res.end(data);
+});
+
+router.register('/booking/flightDetail', function (req, res) {
+  console.log(req.method + "   " + req.url)
+  let data = fs.readFileSync(__dirname + '/views/booking/flightDetail.html')
+  res.writeHead(200, {
+    'Content-Type': 'text/html'
+  });
+  res.end(data);
+});
+
+
 router.register('/DSChuyenBay', function (req, res) {
   let DSChuyenBay = '';
   let ds = method.get('http://localhost:3001/DSChuyenBay', "");
