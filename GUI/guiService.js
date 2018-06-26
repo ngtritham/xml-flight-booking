@@ -99,7 +99,16 @@ router.register('/report/getMonth', function (req, res) {
     'Content-Type': 'text/xml'
   });
   res.end((new xml2js.Builder()).buildObject(report))
+});
 
+router.register('/report/getYear', function (req, res) {
+  const { pathname, query } = URL.parse(req.url, true);
+  report = method.post('http://localhost:3001/report/getYear', query)
+
+  res.writeHead(200, {
+    'Content-Type': 'text/xml'
+  });
+  res.end((new xml2js.Builder()).buildObject(report))
 });
 
 router.register('/report/yearlyReport', function (req, res) {

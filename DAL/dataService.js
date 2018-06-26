@@ -60,7 +60,7 @@ router.register('/flyingDetail', function (req, res) {
   res.end();
 });
 
-router.register('/report/getMonth', function (req, res) {
+router.register('/getReport', function (req, res) {
   let report = getMethod.get_MonthReport()
 
   res.writeHead(200, { 'Content-Type': 'text/plan' });

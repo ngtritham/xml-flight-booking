@@ -75,7 +75,7 @@ router.register('/report/getMonth', function (req, res) {
     body = JSON.parse(data);
   });
   req.on('end', function () {
-    let report = method.get('http://localhost:3000/report/getMonth', "")
+    let report = method.get('http://localhost:3000/getReport', "")
 
     for (let i = 0; i < Object.keys(report.Doanh_thu_nam).length; i++) {
       if(report.Doanh_thu_nam[i].$.Nam == body.Nam) {
@@ -89,6 +89,28 @@ router.register('/report/getMonth', function (req, res) {
         }
         
         break;
+      }
+    }
+
+    res.end("{}")
+  });
+});
+
+router.register('/report/getYear', function (req, res) {
+  res.writeHead(200, { 'Content-Type': 'text/json'})
+
+  let body
+
+  req.on('data', function (data) {
+    body = JSON.parse(data);
+  });
+  req.on('end', function () {
+    let report = method.get('http://localhost:3000/getReport', "")
+
+    for (let i = 0; i < Object.keys(report.Doanh_thu_nam).length; i++) {
+      if(report.Doanh_thu_nam[i].$.Nam == body.Nam) {
+        res.end(JSON.stringify(report.Doanh_thu_nam[i]))
+        return
       }
     }
 

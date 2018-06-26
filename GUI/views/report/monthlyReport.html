@@ -184,6 +184,10 @@
                 let veban = data.getElementsByTagName('Ban_ve')
                 let ds = "<tr> <th>STT</th> <th>Chuyến bay</th> <th>Số vé</th> <th>Tỷ lệ</th> <th>Doanh thu</th> </tr>"
 
+                if (veban == null) {
+                    document.getElementById('reportYear').innerHTML = ds;
+                }
+
                 for (let i = 0; i < veban.length; i++) {
                     ds += "<tr> ";
                     ds += "<td> " + (i + 1).toString() + "</td>";
