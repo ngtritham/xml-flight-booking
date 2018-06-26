@@ -66,7 +66,25 @@ router.register('/flyingDetail', function (req, res) {
   res.end();
 });
 
-router.register('/chiTietChuyenBay')
+router.register('/report/getMonth', function (req, res) {
+  console.log(req.url)
+
+  let body
+  req.on('data', function (data) {
+    body = JSON.parse(data);
+    console.log(data)
+  });
+  req.on('end', function () {
+    let report = method.get('http://localhost:3000/report/getMonth', "")
+    let result;
+    for (var i = 0; i < Object.keys(report.Danh_sach_bao_cao_doanh_thu_ve_cac_chuyen_bay).length; i++) {
+      console.log(report.Danh_sach_bao_cao_doanh_thu_ve_cac_chuyen_bay[i])
+      if (report.Danh_sach_bao_cao_doanh_thu_ve_cac_chuyen_bay[i].$.Nam == body.Nam) {
+        console.log(report.Danh_sach_bao_cao_doanh_thu_ve_cac_chuyen_bay[i])
+      }
+    }
+  });
+});
 
 // We need a server which relies on our router
 const server = http.createServer(function (req, res) {

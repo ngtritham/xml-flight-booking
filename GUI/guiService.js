@@ -3,6 +3,8 @@ const router = require('./router');
 const fs = require('fs')
 const qs = require('querystring');
 const method = require('../LIB/requestMethod')
+const URL = require('url')
+
 const port = 3002;
 
 router.register('/', function (req, res) {
@@ -42,8 +44,18 @@ router.register('/account/signup', function (req, res) {
     });
 
     req.on('end', function () {
-      var post = qs.parse(body);
-      console.log(post);
+      let post = qs.parse(body);
+      let newacc = {
+        "ID": " ",
+        "username": post.username,
+        "password": post.password,
+        "Ten": post.Ten,
+        "SDT": post.SDT,
+        "Email": post.Email,
+        "isAdmin": '0'
+      }
+
+      method.post('http://localhost:3001/account', newacc)
     });
 
     res.writeHead(200, { 'Content-Type': 'text/plan' });
@@ -77,6 +89,11 @@ router.register('/report/monthlyReport', function (req, res) {
     'Content-Type': 'text/html'
   });
   res.end(data);
+});
+
+router.register('/report/getMonth', function (req, res) {
+  const { pathname, query } = URL.parse(req.url, true);
+  method.post('http://localhost:3001/report/getMonth', query)
 });
 
 router.register('/report/yearlyReport', function (req, res) {

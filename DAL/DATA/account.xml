@@ -1,8 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Danh_sach_tai_khoan>
-    <Tai_khoan ID="0" username="admin" password="admin" Ten="Admin" SDT="" Email="admin@gmail.com" isAdmin="1"/>
-    <Tai_khoan ID="1" username="thanhsuper" password="123456" Ten="Khưu Quốc Thành" SDT="01236586942" Email="quocthanh@gmail.com" isAdmin="0"/>
-    <Tai_khoan ID="2" username="huuthinh" password="123456" Ten="Nguyễn Hữu Thịnh" SDT="0909125486" Email="huuthinh@gmail.com" isAdmin="0"/>
-    <Tai_khoan ID="3" username="tritham" password="123456" Ten="Nguyễn Trí Thâm" SDT="0932648591" Email="tritham@gmail.com" isAdmin="0"/>
-    <Tai_khoan ID="4" username="duythang" password="123456" Ten="Nguyễn Duy Thắng" SDT="0912365845" Email="duythang@gmail.com" isAdmin="0"/>
-    <Tai_khoan ID="5" username="phuongthao" password="123456" Ten="Trần Lê Phương Thảo" SDT="0936357951" Email="phuongthao@gmail.com" isAdmin="0"/>
+  <Tai_khoan ID="0" username="admin" password="admin" Ten="Admin" SDT="" Email="admin@gmail.com" isAdmin="1"/>
+  <Tai_khoan ID="1" username="thanhsuper" password="123456" Ten="Khưu Quốc Thành" SDT="01236586942" Email="quocthanh@gmail.com" isAdmin="0"/>
+  <Tai_khoan ID="2" username="huuthinh" password="123456" Ten="Nguyễn Hữu Thịnh" SDT="0909125486" Email="huuthinh@gmail.com" isAdmin="0"/>
+  <Tai_khoan ID="3" username="tritham" password="123456" Ten="Nguyễn Trí Thâm" SDT="0932648591" Email="tritham@gmail.com" isAdmin="0"/>
+  <Tai_khoan ID="4" username="duythang" password="123456" Ten="Nguyễn Duy Thắng" SDT="0912365845" Email="duythang@gmail.com" isAdmin="0"/>
+  <Tai_khoan ID="5" username="phuongthao" password="123456" Ten="Trần Lê Phương Thảo" SDT="0936357951" Email="phuongthao@gmail.com" isAdmin="0"/>
+  <Tai_khoan ID=" " username="thuanthienky" password="sdsadsad" Ten="sdsad" SDT="asd" Email="hettientieu1997@gmail.com" isAdmin="0"/>
 </Danh_sach_tai_khoan>

@@ -60,6 +60,13 @@ router.register('/flyingDetail', function (req, res) {
   res.end();
 });
 
+router.register('/report/getMonth', function (req, res) {
+  let report = getMethod.get_MonthReport()
+
+  res.writeHead(200, { 'Content-Type': 'text/json' });
+  res.end(JSON.stringify(report));
+});
+
 // We need a server which relies on our router
 const server = http.createServer(function (req, res) {
   handler = router.route(req);

@@ -6,10 +6,19 @@ const path = __dirname;
 
 
 //Get danh sách cửa hàng
-const get_DSChuyenBay = () => {
+module.exports.get_DSChuyenBay = () => {
     let ret;
     data = fs.readFileSync(__dirname + '/DATA/flightInfo.xml');
-    console.log(data)
+    xml2js.parseString(data, function (err, result) {
+        ret = result
+    });
+
+    return ret;
+}
+
+module.exports.get_MonthReport = () => {
+    let ret;
+    data = fs.readFileSync(__dirname + '/DATA/monthlyReport.xml');
     xml2js.parseString(data, function (err, result) {
         ret = result
     });
@@ -35,7 +44,3 @@ const get_DanhSach_Tivi = () => {
     return xml
 }
 */
-
-module.exports = {
-    get_DSChuyenBay: get_DSChuyenBay
-}
