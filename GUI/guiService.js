@@ -4,7 +4,7 @@ const fs = require('fs')
 const qs = require('querystring');
 const method = require('../LIB/requestMethod')
 const URL = require('url')
-
+const xml2js = require("xml2js")
 const port = 3002;
 
 router.register('/', function (req, res) {
@@ -93,7 +93,13 @@ router.register('/report/monthlyReport', function (req, res) {
 
 router.register('/report/getMonth', function (req, res) {
   const { pathname, query } = URL.parse(req.url, true);
-  method.post('http://localhost:3001/report/getMonth', query)
+  report = method.post('http://localhost:3001/report/getMonth', query)
+
+  res.writeHead(200, {
+    'Content-Type': 'text/xml'
+  });
+  res.end((new xml2js.Builder()).buildObject(report))
+
 });
 
 router.register('/report/yearlyReport', function (req, res) {

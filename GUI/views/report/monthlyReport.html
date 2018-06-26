@@ -112,7 +112,7 @@
                         </select>
                     </div>
                     <!-- Table -->
-                    <table class="table">
+                    <table id="reportMonth" class="table">
                         <tr>
                             <th>STT</th>
                             <th>Chuyến bay</th>
@@ -181,7 +181,20 @@
             let vals = [getMonth.options[getMonth.selectedIndex].value, getYear.options[getYear.selectedIndex].value]
 
             requestApi('/report/getMonth', 'GET', atts, vals).then(function (data) {
-                console.log(data)
+                let veban = data.getElementsByTagName('Ban_ve')
+                let ds = "<tr> <th>STT</th> <th>Chuyến bay</th> <th>Số vé</th> <th>Tỷ lệ</th> <th>Doanh thu</th> </tr>"
+
+                for (let i = 0; i < veban.length; i++) {
+                    ds += "<tr> ";
+                    ds += "<td> " + (i + 1).toString() + "</td>";
+                    ds += "<td> " + veban[i].getAttribute('Ma_chuyen_bay') + "</td>";
+                    ds += "<td> " + veban[i].getAttribute('So_ve') + "</td>";
+                    ds += "<td> " + veban[i].getAttribute('Ty_le') + "</td>";
+                    ds += "<td> " + veban[i].getAttribute('Doanh_thu') + "</td>";
+                    ds += "</tr>";
+                }
+
+                document.getElementById('reportMonth').innerHTML = ds;
             });
         }
     </script>

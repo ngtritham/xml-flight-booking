@@ -63,7 +63,7 @@ router.register('/flyingDetail', function (req, res) {
 router.register('/report/getMonth', function (req, res) {
   let report = getMethod.get_MonthReport()
 
-  res.writeHead(200, { 'Content-Type': 'text/json' });
+  res.writeHead(200, { 'Content-Type': 'text/plan' });
   res.end(JSON.stringify(report));
 });
 

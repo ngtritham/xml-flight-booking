@@ -12,7 +12,7 @@ module.exports.get = function (url, data) {
         }
     };
     xhr.open("GET", url, false);
-    xhr.send(redata);
+    xhr.send();
 
     return ret;
 }
@@ -23,13 +23,14 @@ module.exports.post = function (url, data) {
     redata = JSON.stringify(data)
     xhr.onreadystatechange = function () {
         if (this.readyState === 4) {
-            console.log(url + " get DONE!");
+            console.log(url + " post DONE!");
             ret = JSON.parse(this.responseText)
         }
     };
 
     redata = JSON.stringify(data)
     xhr.open("POST", url, false);
+    xhr.setRequestHeader('Content-type','application/json; charset=utf-8')
     xhr.send(redata);
 
     return ret;

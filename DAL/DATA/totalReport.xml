@@ -1,0 +1,126 @@
+<!-- BM 5.2 -->
+<Bao_cao_doanh_thu>
+    <Doanh_thu_nam Nam="2017">
+        <DS_Ban_ve Thang="1" So_chuyen_bay="1500" Ty_le="1500/2000" Doanh_thu="46.016.000.000 VND">
+            <Ban_ve Ma_chuyen_bay="CB01" So_ve="123" Ty_le="123/150" Doanh_thu="264.000.000 VND"/>
+            <Ban_ve Ma_chuyen_bay="CB02" So_ve="120" Ty_le="120/150" Doanh_thu="264.000.000 VND"/>
+            <Ban_ve Ma_chuyen_bay="CB03" So_ve="140" Ty_le="140/150" Doanh_thu="220.000.000 VND"/>
+            <Ban_ve Ma_chuyen_bay="CB04" So_ve="90" Ty_le="90/150" Doanh_thu="120.000.000 VND"/>
+            <Ban_ve Ma_chuyen_bay="CB05" So_ve="112" Ty_le="112/150" Doanh_thu="385.000.000 VND"/>
+        </DS_Ban_ve>
+        <DS_Ban_ve Thang="2" So_chuyen_bay="1543" Ty_le="1543/2000" Doanh_thu="53.678.000.000 VND">
+            <Ban_ve Ma_chuyen_bay="CB01" So_ve="142" Ty_le="142/150" Doanh_thu="286.000.000 VND"/>
+            <Ban_ve Ma_chuyen_bay="CB02" So_ve="115" Ty_le="115/150" Doanh_thu="211.000.000 VND"/>
+            <Ban_ve Ma_chuyen_bay="CB03" So_ve="118" Ty_le="118/150" Doanh_thu="125.000.000 VND"/>
+            <Ban_ve Ma_chuyen_bay="CB04" So_ve="84" Ty_le="84/150" Doanh_thu="89.000.000 VND"/>
+            <Ban_ve Ma_chuyen_bay="CB05" So_ve="134" Ty_le="134/150" Doanh_thu="256.000.000 VND"/>
+        </DS_Ban_ve>
+        <DS_Ban_ve Thang="3" So_chuyen_bay="1426" Ty_le="1426/2000" Doanh_thu="42.945.000.000 VND">
+            <Ban_ve Ma_chuyen_bay="CB01" So_ve="142" Ty_le="142/150" Doanh_thu="286.000.000 VND"/>
+            <Ban_ve Ma_chuyen_bay="CB02" So_ve="115" Ty_le="115/150" Doanh_thu="211.000.000 VND"/>
+            <Ban_ve Ma_chuyen_bay="CB03" So_ve="118" Ty_le="118/150" Doanh_thu="125.000.000 VND"/>
+            <Ban_ve Ma_chuyen_bay="CB04" So_ve="84" Ty_le="84/150" Doanh_thu="89.000.000 VND"/>
+            <Ban_ve Ma_chuyen_bay="CB05" So_ve="134" Ty_le="134/150" Doanh_thu="256.000.000 VND"/>
+        </DS_Ban_ve>
+        <DS_Ban_ve Thang="4" So_chuyen_bay="1806" Ty_le="1806/2000" Doanh_thu="88.946.000.000 VND">
+            <Ban_ve Ma_chuyen_bay="CB01" So_ve="142" Ty_le="142/150" Doanh_thu="286.000.000 VND"/>
+            <Ban_ve Ma_chuyen_bay="CB02" So_ve="115" Ty_le="115/150" Doanh_thu="211.000.000 VND"/>
+            <Ban_ve Ma_chuyen_bay="CB03" So_ve="118" Ty_le="118/150" Doanh_thu="125.000.000 VND"/>
+            <Ban_ve Ma_chuyen_bay="CB04" So_ve="84" Ty_le="84/150" Doanh_thu="89.000.000 VND"/>
+            <Ban_ve Ma_chuyen_bay="CB05" So_ve="134" Ty_le="134/150" Doanh_thu="256.000.000 VND"/>
+        </DS_Ban_ve>
+        <DS_Ban_ve Thang="5" So_chuyen_bay="1160" Ty_le="1160/2000" Doanh_thu="35.468.000.000 VND">
+            <Ban_ve Ma_chuyen_bay="CB01" So_ve="142" Ty_le="142/150" Doanh_thu="286.000.000 VND"/>
+            <Ban_ve Ma_chuyen_bay="CB02" So_ve="115" Ty_le="115/150" Doanh_thu="211.000.000 VND"/>
+            <Ban_ve Ma_chuyen_bay="CB03" So_ve="118" Ty_le="118/150" Doanh_thu="125.000.000 VND"/>
+            <Ban_ve Ma_chuyen_bay="CB04" So_ve="84" Ty_le="84/150" Doanh_thu="89.000.000 VND"/>
+            <Ban_ve Ma_chuyen_bay="CB05" So_ve="134" Ty_le="134/150" Doanh_thu="256.000.000 VND"/>
+        </DS_Ban_ve>
+        <DS_Ban_ve Thang="6" So_chuyen_bay="1684" Ty_le="1684/2000" Doanh_thu="57.956.000.000 VND">
+            <Ban_ve Ma_chuyen_bay="CB01" So_ve="142" Ty_le="142/150" Doanh_thu="286.000.000 VND"/>
+            <Ban_ve Ma_chuyen_bay="CB02" So_ve="115" Ty_le="115/150" Doanh_thu="211.000.000 VND"/>
+            <Ban_ve Ma_chuyen_bay="CB03" So_ve="118" Ty_le="118/150" Doanh_thu="125.000.000 VND"/>
+            <Ban_ve Ma_chuyen_bay="CB04" So_ve="84" Ty_le="84/150" Doanh_thu="89.000.000 VND"/>
+            <Ban_ve Ma_chuyen_bay="CB05" So_ve="134" Ty_le="134/150" Doanh_thu="256.000.000 VND"/>
+        </DS_Ban_ve>
+        <DS_Ban_ve Thang="7" So_chuyen_bay="1230" Ty_le="1230/2000" Doanh_thu="40.684.000.000 VND">
+            <Ban_ve Ma_chuyen_bay="CB01" So_ve="142" Ty_le="142/150" Doanh_thu="286.000.000 VND"/>
+            <Ban_ve Ma_chuyen_bay="CB02" So_ve="115" Ty_le="115/150" Doanh_thu="211.000.000 VND"/>
+            <Ban_ve Ma_chuyen_bay="CB03" So_ve="118" Ty_le="118/150" Doanh_thu="125.000.000 VND"/>
+            <Ban_ve Ma_chuyen_bay="CB04" So_ve="84" Ty_le="84/150" Doanh_thu="89.000.000 VND"/>
+            <Ban_ve Ma_chuyen_bay="CB05" So_ve="134" Ty_le="134/150" Doanh_thu="256.000.000 VND"/>
+        </DS_Ban_ve>
+        <DS_Ban_ve Thang="8" So_chuyen_bay="1555" Ty_le="1555/2000" Doanh_thu="55.358.000.000 VND">
+        </DS_Ban_ve>
+        <DS_Ban_ve Thang="9" So_chuyen_bay="1531" Ty_le="1531/2000" Doanh_thu="54.684.000.000 VND">
+        </DS_Ban_ve>
+        <DS_Ban_ve Thang="10" So_chuyen_bay="1436" Ty_le="1436/2000" Doanh_thu="43.368.000.000 VND">
+        </DS_Ban_ve>
+        <DS_Ban_ve Thang="11" So_chuyen_bay="1354" Ty_le="1354/2000" Doanh_thu="37.648.000.000 VND">
+        </DS_Ban_ve>
+        <DS_Ban_ve Thang="12" So_chuyen_bay="1498" Ty_le="1498/2000" Doanh_thu="56.649.000.000 VND">
+        </DS_Ban_ve>   
+    </Doanh_thu_nam>
+    <Doanh_thu_nam Nam="2018">
+        <DS_Ban_ve Thang="1" So_chuyen_bay="1500" Ty_le="1500/2000" Doanh_thu="46.016.000.000 VND">
+            <Ban_ve Ma_chuyen_bay="CB01" So_ve="123" Ty_le="123/150" Doanh_thu="264.000.000 VND"/>
+            <Ban_ve Ma_chuyen_bay="CB02" So_ve="120" Ty_le="120/150" Doanh_thu="264.000.000 VND"/>
+            <Ban_ve Ma_chuyen_bay="CB03" So_ve="140" Ty_le="140/150" Doanh_thu="220.000.000 VND"/>
+            <Ban_ve Ma_chuyen_bay="CB04" So_ve="90" Ty_le="90/150" Doanh_thu="120.000.000 VND"/>
+            <Ban_ve Ma_chuyen_bay="CB05" So_ve="112" Ty_le="112/150" Doanh_thu="385.000.000 VND"/>
+        </DS_Ban_ve>
+        <DS_Ban_ve Thang="2" So_chuyen_bay="1543" Ty_le="1543/2000" Doanh_thu="53.678.000.000 VND">
+            <Ban_ve Ma_chuyen_bay="CB01" So_ve="142" Ty_le="142/150" Doanh_thu="286.000.000 VND"/>
+            <Ban_ve Ma_chuyen_bay="CB02" So_ve="115" Ty_le="115/150" Doanh_thu="211.000.000 VND"/>
+            <Ban_ve Ma_chuyen_bay="CB03" So_ve="118" Ty_le="118/150" Doanh_thu="125.000.000 VND"/>
+            <Ban_ve Ma_chuyen_bay="CB04" So_ve="84" Ty_le="84/150" Doanh_thu="89.000.000 VND"/>
+            <Ban_ve Ma_chuyen_bay="CB05" So_ve="134" Ty_le="134/150" Doanh_thu="256.000.000 VND"/>
+        </DS_Ban_ve>
+        <DS_Ban_ve Thang="3" So_chuyen_bay="1426" Ty_le="1426/2000" Doanh_thu="42.945.000.000 VND">
+            <Ban_ve Ma_chuyen_bay="CB01" So_ve="142" Ty_le="142/150" Doanh_thu="286.000.000 VND"/>
+            <Ban_ve Ma_chuyen_bay="CB02" So_ve="115" Ty_le="115/150" Doanh_thu="211.000.000 VND"/>
+            <Ban_ve Ma_chuyen_bay="CB03" So_ve="118" Ty_le="118/150" Doanh_thu="125.000.000 VND"/>
+            <Ban_ve Ma_chuyen_bay="CB04" So_ve="84" Ty_le="84/150" Doanh_thu="89.000.000 VND"/>
+            <Ban_ve Ma_chuyen_bay="CB05" So_ve="134" Ty_le="134/150" Doanh_thu="256.000.000 VND"/>
+        </DS_Ban_ve>
+        <DS_Ban_ve Thang="4" So_chuyen_bay="1806" Ty_le="1806/2000" Doanh_thu="88.946.000.000 VND">
+            <Ban_ve Ma_chuyen_bay="CB01" So_ve="142" Ty_le="142/150" Doanh_thu="286.000.000 VND"/>
+            <Ban_ve Ma_chuyen_bay="CB02" So_ve="115" Ty_le="115/150" Doanh_thu="211.000.000 VND"/>
+            <Ban_ve Ma_chuyen_bay="CB03" So_ve="118" Ty_le="118/150" Doanh_thu="125.000.000 VND"/>
+            <Ban_ve Ma_chuyen_bay="CB04" So_ve="84" Ty_le="84/150" Doanh_thu="89.000.000 VND"/>
+            <Ban_ve Ma_chuyen_bay="CB05" So_ve="134" Ty_le="134/150" Doanh_thu="256.000.000 VND"/>
+        </DS_Ban_ve>
+        <DS_Ban_ve Thang="5" So_chuyen_bay="1160" Ty_le="1160/2000" Doanh_thu="35.468.000.000 VND">
+            <Ban_ve Ma_chuyen_bay="CB01" So_ve="142" Ty_le="142/150" Doanh_thu="286.000.000 VND"/>
+            <Ban_ve Ma_chuyen_bay="CB02" So_ve="115" Ty_le="115/150" Doanh_thu="211.000.000 VND"/>
+            <Ban_ve Ma_chuyen_bay="CB03" So_ve="118" Ty_le="118/150" Doanh_thu="125.000.000 VND"/>
+            <Ban_ve Ma_chuyen_bay="CB04" So_ve="84" Ty_le="84/150" Doanh_thu="89.000.000 VND"/>
+            <Ban_ve Ma_chuyen_bay="CB05" So_ve="134" Ty_le="134/150" Doanh_thu="256.000.000 VND"/>
+        </DS_Ban_ve>
+        <DS_Ban_ve Thang="6" So_chuyen_bay="1684" Ty_le="1684/2000" Doanh_thu="57.956.000.000 VND">
+            <Ban_ve Ma_chuyen_bay="CB01" So_ve="142" Ty_le="142/150" Doanh_thu="286.000.000 VND"/>
+            <Ban_ve Ma_chuyen_bay="CB02" So_ve="115" Ty_le="115/150" Doanh_thu="211.000.000 VND"/>
+            <Ban_ve Ma_chuyen_bay="CB03" So_ve="118" Ty_le="118/150" Doanh_thu="125.000.000 VND"/>
+            <Ban_ve Ma_chuyen_bay="CB04" So_ve="84" Ty_le="84/150" Doanh_thu="89.000.000 VND"/>
+            <Ban_ve Ma_chuyen_bay="CB05" So_ve="134" Ty_le="134/150" Doanh_thu="256.000.000 VND"/>
+        </DS_Ban_ve>
+        <DS_Ban_ve Thang="7" So_chuyen_bay="1230" Ty_le="1230/2000" Doanh_thu="40.684.000.000 VND">
+            <Ban_ve Ma_chuyen_bay="CB01" So_ve="142" Ty_le="142/150" Doanh_thu="286.000.000 VND"/>
+            <Ban_ve Ma_chuyen_bay="CB02" So_ve="115" Ty_le="115/150" Doanh_thu="211.000.000 VND"/>
+            <Ban_ve Ma_chuyen_bay="CB03" So_ve="118" Ty_le="118/150" Doanh_thu="125.000.000 VND"/>
+            <Ban_ve Ma_chuyen_bay="CB04" So_ve="84" Ty_le="84/150" Doanh_thu="89.000.000 VND"/>
+            <Ban_ve Ma_chuyen_bay="CB05" So_ve="134" Ty_le="134/150" Doanh_thu="256.000.000 VND"/>
+        </DS_Ban_ve>
+        <DS_Ban_ve Thang="8" So_chuyen_bay="1555" Ty_le="1555/2000" Doanh_thu="55.358.000.000 VND">
+        </DS_Ban_ve>
+        <DS_Ban_ve Thang="9" So_chuyen_bay="1531" Ty_le="1531/2000" Doanh_thu="54.684.000.000 VND">
+        </DS_Ban_ve>
+        <DS_Ban_ve Thang="10" So_chuyen_bay="1436" Ty_le="1436/2000" Doanh_thu="43.368.000.000 VND">
+        </DS_Ban_ve>
+        <DS_Ban_ve Thang="11" So_chuyen_bay="1354" Ty_le="1354/2000" Doanh_thu="37.648.000.000 VND">
+        </DS_Ban_ve>
+        <DS_Ban_ve Thang="12" So_chuyen_bay="1498" Ty_le="1498/2000" Doanh_thu="56.649.000.000 VND">
+        </DS_Ban_ve>   
+    </Doanh_thu_nam>
+
+</Bao_cao_doanh_thu>
