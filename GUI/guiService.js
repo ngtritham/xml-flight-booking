@@ -94,7 +94,7 @@ router.register('/report/monthlyReport', function (req, res) {
 router.register('/report/getMonth', function (req, res) {
   const { pathname, query } = URL.parse(req.url, true);
 
-  report = method.post('http://localhost:3001/report/getMonth', query)
+  report = method.post('http://localhost:3001/report/getMonth', JSON.stringify(query))
   if (report == "") {
     res.writeHead(404, { 'Content-Type': 'text/xml'})
     res.end();
@@ -110,7 +110,7 @@ router.register('/report/getMonth', function (req, res) {
 router.register('/report/getYear', function (req, res) {
   const { pathname, query } = URL.parse(req.url, true);
 
-  report = method.post('http://localhost:3001/report/getYear', query)
+  report = method.post('http://localhost:3001/report/getYear', JSON.stringify(query))
   if (report == "") {
     res.writeHead(404, { 'Content-Type': 'text/xml'})
     res.end();

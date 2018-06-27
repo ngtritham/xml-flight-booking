@@ -4,7 +4,7 @@ const xhr = new XMLHttpRequest();
 module.exports.get = function (url, data) {
     //data -> json
     let ret;
-    redata = JSON.stringify(data)
+
     xhr.onreadystatechange = function () {
         if (this.readyState === 4) {
             console.log(url + " get DONE!");
@@ -20,7 +20,7 @@ module.exports.get = function (url, data) {
 module.exports.post = function (url, data) {
     //data -> json
     let ret;
-    redata = JSON.stringify(data)
+
     xhr.onreadystatechange = function () {
         if (this.readyState === 4) {
             console.log(url + " post DONE!");
@@ -28,10 +28,9 @@ module.exports.post = function (url, data) {
         }
     };
 
-    redata = JSON.stringify(data)
     xhr.open("POST", url, false);
     xhr.setRequestHeader('Content-type','application/json; charset=utf-8')
-    xhr.send(redata);
+    xhr.send(data);
 
     return ret;
 }

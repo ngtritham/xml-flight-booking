@@ -42,7 +42,7 @@ router.register('/account', function (req, res) {
         body.isAdmin == undefined)
         return
 
-      method.post('http://localhost:3000/account', body)
+      method.post('http://localhost:3000/account', JSON.stringify(body))
     });
   }
 
