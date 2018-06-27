@@ -4,26 +4,39 @@ const method = require('../LIB/requestMethod')
 const port = 3001;
 // Handle your routes here, put static pages in ./public and they will server
 router.register('/', function (req, res) {
-  res.writeHead(200, { 'Content-Type': 'text/plain' });
+  res.writeHead(200, {
+    'Content-Type': 'text/plain'
+  });
   res.end('Running BUS Service !!!!');
 });
 
 router.register('/DSChuyenBay', function (req, res) {
   let ds = method.get("http://localhost:3000/getDSChuyenBay", "");
-  res.writeHead(200, { 'Content-Type': 'text/json' });
+  res.writeHead(200, {
+    'Content-Type': 'text/json'
+  });
   res.end(JSON.stringify(ds.Danh_sach_chuyen_bay));
 });
 
-router.register('/account', function (req, res) {
+router.register('/account/signup', function (req, res) {
   if (req.method == 'GET') {
-    //auth
+    // let ds = method.get("http://localhost:3000/account/signup", "");
+    // res.writeHead(200, {
+    //   'Content-Type': 'text/json'
+    // });
+    // console.log("BUS Service port 3001 /account/signup \n Get Danh sach chuyen bay");
+    // console.log(ds);
+    // res.end(JSON.stringify(ds.Danh_sach_tai_khoan));
   }
-
-  if (req.method == 'POST') {
+  
+  else if (req.method == 'POST') {
+    let ds = method.get("http://localhost:3000/account/signup", "");
+    console.log(ds);
     let body
     req.on('data', function (data) {
       body = JSON.parse(data);
     });
+    //console.log(body.username);
     req.on('end', function () {
       //Do something
       if (body.ID == undefined ||
@@ -35,11 +48,15 @@ router.register('/account', function (req, res) {
         body.isAdmin == undefined)
         return
 
-      method.post('http://localhost:3000/account', body)
+      method.post('http://localhost:3000/account/signup', body)
     });
+  } else {
+    console.log("Error BUS Service: http://localhost:3001/account/signup");
   }
 
-  res.writeHead(200, { 'Content-Type': 'text/plan' });
+  res.writeHead(200, {
+    'Content-Type': 'text/plan'
+  });
   res.end();
 });
 
@@ -49,8 +66,7 @@ router.register('/flyingDetail', function (req, res) {
     req.on('data', function (data) {
       body = JSON.parse(data);
     });
-    req.on('end', function () {
-    });
+    req.on('end', function () {});
   }
 
   if (req.method == 'POST') {
@@ -58,11 +74,12 @@ router.register('/flyingDetail', function (req, res) {
     req.on('data', function (data) {
       body = JSON.parse(data);
     });
-    req.on('end', function () {
-    });
+    req.on('end', function () {});
   }
 
-  res.writeHead(200, { 'Content-Type': 'text/plan' });
+  res.writeHead(200, {
+    'Content-Type': 'text/plan'
+  });
   res.end();
 });
 

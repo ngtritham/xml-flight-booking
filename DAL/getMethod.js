@@ -16,6 +16,20 @@ module.exports.get_DSChuyenBay = () => {
     return ret;
 }
 
+module.exports.get_DSTaiKhoan = () => {
+    let ret;
+    data = fs.readFileSync(__dirname + '/DATA/account.xml');
+    xml2js.parseString(data, function (err, result) {
+        if (err) {
+            console.log("Error: " + err);
+        }
+        console.log(result);
+        ret = result;
+    });
+
+    return ret;
+}
+
 module.exports.get_MonthReport = () => {
     let ret;
     data = fs.readFileSync(__dirname + '/DATA/monthlyReport.xml');

@@ -23,12 +23,15 @@ router.register('/addPhieuDatCho', function (req, res) {
   res.end()
 });
 
-router.register('/account', function (req, res) {
-  if (req.method == 'GET') {
-
+router.register('/account/signup', function (req, res) {
+  if (req.method === 'GET') {
+    let data = getMethod.get_DSTaiKhoan();
+    console.log(data);
+    res.writeHead(200, { 'Content-Type': 'text/plan' });
+    res.end(JSON.stringify(data));
   }
 
-  if (req.method == 'POST') {
+  if (req.method === 'POST') {
     let body
     req.on('data', function (data) {
       body = JSON.parse(data);

@@ -1,7 +1,7 @@
 const http = require('http');
 const router = require('./router');
 const fs = require('fs')
-const qs = require('querystring');
+const querystring = require('querystring');
 const method = require('../LIB/requestMethod')
 const URL = require('url')
 
@@ -14,6 +14,7 @@ router.register('/', function (req, res) {
     'Content-Type': 'text/html'
   });
   res.end(data);
+
 });
 
 router.register('/home', function (req, res) {
@@ -27,12 +28,16 @@ router.register('/home', function (req, res) {
 
 router.register('/account/signup', function (req, res) {
   if (req.method === "GET") {
-    console.log(req.method + "   " + req.url)
+    // Load giao diện
+    console.log(req.method + "   " + req.url);
     let html = fs.readFileSync(__dirname + '/views/account/signup.html')
-    res.writeHead(200, { 'Content-Type': 'text/html' });
+    res.writeHead(200, {
+      'Content-Type': 'text/html'
+    });
     res.end(html);
   } else if (req.method === "POST") {
-    var body = '';
+    console.log(req.method + "   " + req.url);
+    let body = '';
 
     req.on('data', function (data) {
       body += data;
@@ -44,7 +49,7 @@ router.register('/account/signup', function (req, res) {
     });
 
     req.on('end', function () {
-      let post = qs.parse(body);
+      let post = querystring.parse(body);
       let newacc = {
         "ID": " ",
         "username": post.username,
@@ -55,22 +60,32 @@ router.register('/account/signup', function (req, res) {
         "isAdmin": '0'
       }
 
-      method.post('http://localhost:3001/account', newacc)
+      method.post('http://localhost:3001/account/signup', newacc)
     });
 
-    res.writeHead(200, { 'Content-Type': 'text/plan' });
+    res.writeHead(200, {
+      'Content-Type': 'text/plan'
+    });
     res.end();
   }
 
 });
 
 router.register('/account/login', function (req, res) {
-  console.log(req.method + "   " + req.url)
-  let data = fs.readFileSync(__dirname + '/views/account/login.html')
-  res.writeHead(200, {
-    'Content-Type': 'text/html'
-  });
-  res.end(data);
+  if (req.method === "GET") {
+    console.log(req.method + "   " + req.url)
+    let data = fs.readFileSync(__dirname + '/views/account/login.html')
+    res.writeHead(200, {
+      'Content-Type': 'text/html'
+    });
+    res.end(data);
+  } else if (req.method === "POST") {
+
+  }
+  else {
+    console.log("Error /account/login. Undefined method !!!");
+  }
+
 });
 
 router.register('/account/profile', function (req, res) {
@@ -92,7 +107,10 @@ router.register('/report/monthlyReport', function (req, res) {
 });
 
 router.register('/report/getMonth', function (req, res) {
-  const { pathname, query } = URL.parse(req.url, true);
+  const {
+    pathname,
+    query
+  } = URL.parse(req.url, true);
   method.post('http://localhost:3001/report/getMonth', query)
 });
 
