@@ -34,6 +34,31 @@ module.exports.addTaiKhoan = function (json) {
     });
 }
 
+module.exports.update_FlightInfo = (MaCB) => {
+    const path = __dirname + "/DATA/flightInfo.xml"
+
+    let ret;
+    data = fs.readFileSync(path);
+    xml2js.parseString(data, function (err, result) {
+        ret = result
+    });
+
+    for (let i = 0;  i < Object.keys(ret.Danh_sach_chuyen_bay.Chuyen_bay).length; i++) {
+        if (ret.Danh_sach_chuyen_bay.Chuyen_bay[i].$.Ma_chuyen_bay == MaCB) {
+            if (ret.Danh_sach_chuyen_bay.Chuyen_bay[i].$.So_ghe_trong == '0') {
+                return 'false'
+            }
+
+            ret.Danh_sach_chuyen_bay.Chuyen_bay[i].$.So_ghe_trong = (parseInt(ret.Danh_sach_chuyen_bay.Chuyen_bay[i].$.So_ghe_trong) - 1).toString()
+            ret.Danh_sach_chuyen_bay.Chuyen_bay[i].$.So_ghe_dat = (parseInt(ret.Danh_sach_chuyen_bay.Chuyen_bay[i].$.So_ghe_dat) + 1).toString()
+            break;
+        }
+    }
+
+    saveFile(path, ret)
+    return "true";
+}
+
 function saveFile(url, json) {
     let builder = new xml2js.Builder();
     let xml = builder.buildObject(json);

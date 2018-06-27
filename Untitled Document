@@ -67,8 +67,12 @@ router.register('/getReport', function (req, res) {
   res.end(JSON.stringify(report));
 });
 
-router.register('/TicketInfo', function (req, res) {
+router.register('/getTicketInfo', function (req, res) {
   if (req.method == 'GET') {
+    //auth
+  }
+
+  if (req.method == 'POST') {
     let body
     req.on('data', function (data) {
       body = JSON.parse(data);
@@ -79,79 +83,22 @@ router.register('/TicketInfo', function (req, res) {
     });
   }
 
-  if (req.method == 'POST') {
-
-  }
-
   res.writeHead(200, { 'Content-Type': 'text/plan' });
   res.end();
 });
 
-router.register('/BookingInfo', function (req, res) {
+router.register('/getBookingInfo', function (req, res) {
 
   let body
-  if (req.method == 'GET') {
+  req.on('data', function (data) {
+    body = JSON.parse(data);
+  });
+  req.on('end', function () {
     let dsphieu = getMethod.get_BookingInfo();
-    res.writeHead(200, { 'Content-Type': 'text/json' });
-    res.end(JSON.stringify(dsphieu));
-    return
-  }
+    console.log(dsphieu);
+  });
 
-  if (req.method == 'POST') {
-
-  }
-
-  res.writeHead(404, { 'Content-Type': 'text/json' });
-  res.end();
-});
-
-router.register('/updateFlight', function (req, res) {
-
-  let body
-  if (req.method == 'GET') {
-    
-  }
-
-  if (req.method == 'POST') {
-    req.on('data', function (data) {
-      body = JSON.parse(data);
-    });
-    req.on('end', function () {
-      //Do something
-      let controng = postMethod.update_FlightInfo(body);
-
-      res.writeHead(200, { 'Content-Type': 'text/json' });
-      res.end(controng);
-      return
-    });
-  }
-
-  res.writeHead(404, { 'Content-Type': 'text/json' });
-  res.end();
-});
-
-router.register('/booking', function (req, res) {
-
-  let body
-  if (req.method == 'GET') {
-    
-  }
-
-  if (req.method == 'POST') {
-    req.on('data', function (data) {
-      body = JSON.parse(data);
-    });
-    req.on('end', function () {
-      //Do something
-      postMethod.addPhieuDatCho(body);
-
-      res.writeHead(200, { 'Content-Type': 'text/json' });
-      res.end('true');
-      return
-    });
-  }
-
-  res.writeHead(404, { 'Content-Type': 'text/json' });
+  res.writeHead(200, { 'Content-Type': 'text/json' });
   res.end();
 });
 

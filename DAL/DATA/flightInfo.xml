@@ -1,8 +1,8 @@
-<!-- BM 4 -->
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Danh_sach_chuyen_bay>
-    <Chuyen_bay STT="1" Ma_chuyen_bay="CB01" San_bay_di="Tân Sơn Nhất" San_bay_den="Nội Bài" Khoi_hanh="16:00" Thoi_gian="2 giờ" So_ghe_trong="23" So_ghe_dat="127"/>
-    <Chuyen_bay STT="2" Ma_chuyen_bay="CB02" San_bay_di="Cam Ranh" San_bay_den="Tân Sơn Nhất" Khoi_hanh="10:20" Thoi_gian="1 giờ 15 phút" So_ghe_trong="40" So_ghe_dat="110"/>
-    <Chuyen_bay STT="3" Ma_chuyen_bay="CB03" San_bay_di="Hải Phòng" San_bay_den=" Đà Lạt" Khoi_hanh="12:45" Thoi_gian="1 giờ 50 phút" So_ghe_trong="30" So_ghe_dat="120"/>
-    <Chuyen_bay STT="4" Ma_chuyen_bay="CB04" San_bay_di="Nội Bài" San_bay_den="Bangkok" Khoi_hanh="13:20" Thoi_gian="2 giờ 35 phút" So_ghe_trong="12" So_ghe_dat="138"/>
-    <Chuyen_bay STT="5" Ma_chuyen_bay="CB05" San_bay_di="Tân Sơn Nhất" San_bay_den="Tokyo" Khoi_hanh="22:00" Thoi_gian="3 giờ 45 phút" So_ghe_trong="7" So_ghe_dat="143"/>
+  <Chuyen_bay STT="1" Ma_chuyen_bay="CB01" San_bay_di="Tân Sơn Nhất" San_bay_den="Nội Bài" Khoi_hanh="16:00" Thoi_gian="2 giờ" So_ghe_trong="22" So_ghe_dat="128"/>
+  <Chuyen_bay STT="2" Ma_chuyen_bay="CB02" San_bay_di="Cam Ranh" San_bay_den="Tân Sơn Nhất" Khoi_hanh="10:20" Thoi_gian="1 giờ 15 phút" So_ghe_trong="40" So_ghe_dat="110"/>
+  <Chuyen_bay STT="3" Ma_chuyen_bay="CB03" San_bay_di="Hải Phòng" San_bay_den=" Đà Lạt" Khoi_hanh="12:45" Thoi_gian="1 giờ 50 phút" So_ghe_trong="30" So_ghe_dat="120"/>
+  <Chuyen_bay STT="4" Ma_chuyen_bay="CB04" San_bay_di="Nội Bài" San_bay_den="Bangkok" Khoi_hanh="13:20" Thoi_gian="2 giờ 35 phút" So_ghe_trong="12" So_ghe_dat="138"/>
+  <Chuyen_bay STT="5" Ma_chuyen_bay="CB05" San_bay_di="Tân Sơn Nhất" San_bay_den="Tokyo" Khoi_hanh="22:00" Thoi_gian="3 giờ 45 phút" So_ghe_trong="7" So_ghe_dat="143"/>
 </Danh_sach_chuyen_bay>

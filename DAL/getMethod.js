@@ -16,25 +16,31 @@ module.exports.get_DSChuyenBay = () => {
     return ret;
 }
 
-module.exports.get_DSTaiKhoan = () => {
-    let ret;
-    data = fs.readFileSync(__dirname + '/DATA/account.xml');
-    xml2js.parseString(data, function (err, result) {
-        if (err) {
-            console.log("Error: " + err);
-        }
-        console.log(result);
-        ret = result;
-    });
-
-    return ret;
-}
-
 module.exports.get_MonthReport = () => {
     let ret;
     data = fs.readFileSync(__dirname + '/DATA/totalReport.xml');
     xml2js.parseString(data, function (err, result) {
         ret = result.Bao_cao_doanh_thu
+    });
+
+    return ret;
+}
+
+module.exports.get_TicketInfo = () => {
+    let ret;
+    data = fs.readFileSync(__dirname + '/DATA/ticketInfo.xml');
+    xml2js.parseString(data, function (err, result) {
+        ret = result.Danh_sach_ve_chuyen_bay
+    });
+
+    return ret;
+}
+
+module.exports.get_BookingInfo = () => {
+    let ret;
+    data = fs.readFileSync(__dirname + '/DATA/bookingInfo.xml');
+    xml2js.parseString(data, function (err, result) {
+        ret = result.Danh_sach_phieu_dat_cho.Phieu_dat_cho
     });
 
     return ret;

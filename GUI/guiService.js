@@ -61,7 +61,7 @@ router.register('/account/signup', function (req, res) {
       }
       console.log(JSON.stringify(newacc));
       newacc = JSON.stringify(newacc)
-      
+
       method.post('http://localhost:3001/account/signup', newacc)
     });
 
@@ -115,7 +115,7 @@ router.register('/report/getMonth', function (req, res) {
 
   report = method.post('http://localhost:3001/report/getMonth', JSON.stringify(query))
   if (report == "") {
-    res.writeHead(404, { 'Content-Type': 'text/xml'})
+    res.writeHead(404, { 'Content-Type': 'text/xml' })
     res.end();
   }
   report = JSON.parse(report)
@@ -131,7 +131,7 @@ router.register('/report/getYear', function (req, res) {
 
   report = method.post('http://localhost:3001/report/getYear', JSON.stringify(query))
   if (report == "") {
-    res.writeHead(404, { 'Content-Type': 'text/xml'})
+    res.writeHead(404, { 'Content-Type': 'text/xml' })
     res.end();
   }
   report = JSON.parse(report)
@@ -169,12 +169,11 @@ router.register('/booking/flightDetail', function (req, res) {
   res.end(data);
 });
 
-
 router.register('/DSChuyenBay', function (req, res) {
   let DSChuyenBay = '';
   let ds = method.get('http://localhost:3001/DSChuyenBay', "");
   if (ds == "") {
-    res.writeHead(404, { 'Content-Type': 'text/json'})
+    res.writeHead(404, { 'Content-Type': 'text/json' })
     res.end();
   }
   ds = JSON.parse(ds)
@@ -191,6 +190,30 @@ router.register('/DSChuyenBay', function (req, res) {
     'Content-Type': 'text/html'
   });
   res.end(DSChuyenBay);
+});
+
+router.register('/booking', function (req, res) {
+  const { pathname, query } = URL.parse(req.url, true);
+
+  if (query.Ma_chuyen_bay == undefined ||
+    query.Hanh_khach == undefined ||
+    query.CMND == undefined ||
+    query.Dien_thoai == undefined ||
+    query.Hang_ve == undefined ||
+    query.Gia_tien == undefined) {
+    res.writeHead(404, {
+      'Content-Type': 'text/html'
+    });
+    res.end(data);
+    return;
+  }
+
+  let result = method.post('http://localhost:3001/booking', JSON.stringify(query));
+
+  res.writeHead(200, {
+    'Content-Type': 'text/plan'
+  });
+  res.end(result);
 });
 
 // We need a server which relies on our router
