@@ -93,7 +93,13 @@ router.register('/report/monthlyReport', function (req, res) {
 
 router.register('/report/getMonth', function (req, res) {
   const { pathname, query } = URL.parse(req.url, true);
+
   report = method.post('http://localhost:3001/report/getMonth', query)
+  if (report == "") {
+    res.writeHead(404, { 'Content-Type': 'text/xml'})
+    res.end();
+  }
+  report = JSON.parse(report)
 
   res.writeHead(200, {
     'Content-Type': 'text/xml'
@@ -103,7 +109,13 @@ router.register('/report/getMonth', function (req, res) {
 
 router.register('/report/getYear', function (req, res) {
   const { pathname, query } = URL.parse(req.url, true);
+
   report = method.post('http://localhost:3001/report/getYear', query)
+  if (report == "") {
+    res.writeHead(404, { 'Content-Type': 'text/xml'})
+    res.end();
+  }
+  report = JSON.parse(report)
 
   res.writeHead(200, {
     'Content-Type': 'text/xml'
@@ -142,6 +154,12 @@ router.register('/booking/flightDetail', function (req, res) {
 router.register('/DSChuyenBay', function (req, res) {
   let DSChuyenBay = '';
   let ds = method.get('http://localhost:3001/DSChuyenBay', "");
+  if (ds == "") {
+    res.writeHead(404, { 'Content-Type': 'text/json'})
+    res.end();
+  }
+  ds = JSON.parse(ds)
+
   for (var i = 0; i < Object.keys(ds.Chuyen_bay).length; i++) {
     //Thế lực thần bí "$"
     console.log(ds.Chuyen_bay[i].$.STT)

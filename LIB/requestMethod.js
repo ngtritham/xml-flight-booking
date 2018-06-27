@@ -8,7 +8,7 @@ module.exports.get = function (url, data) {
     xhr.onreadystatechange = function () {
         if (this.readyState === 4) {
             console.log(url + " get DONE!");
-            ret = JSON.parse(this.responseText)
+            ret = this.responseText
         }
     };
     xhr.open("GET", url, false);
@@ -24,7 +24,7 @@ module.exports.post = function (url, data) {
     xhr.onreadystatechange = function () {
         if (this.readyState === 4) {
             console.log(url + " post DONE!");
-            ret = JSON.parse(this.responseText)
+            ret = this.responseText
         }
     };
 

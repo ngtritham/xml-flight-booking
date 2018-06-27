@@ -12,7 +12,6 @@ router.register('/', function (req, res) {
 
 router.register('/getDSChuyenBay', function (req, res) {
   let data = getMethod.get_DSChuyenBay()
-  console.log(data);
   res.writeHead(200, { 'Content-Type': 'text/plan' });
   res.end(JSON.stringify(data))
 });

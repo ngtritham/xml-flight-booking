@@ -10,6 +10,13 @@ router.register('/', function (req, res) {
 
 router.register('/DSChuyenBay', function (req, res) {
   let ds = method.get("http://localhost:3000/getDSChuyenBay", "");
+  if (ds == "") {
+    ds.writeHead(404, { 'Content-Type': 'text/json'})
+    ds.end();
+  }
+  
+  ds = JSON.parse(ds)
+
   res.writeHead(200, { 'Content-Type': 'text/json' });
   res.end(JSON.stringify(ds.Danh_sach_chuyen_bay));
 });
@@ -76,6 +83,11 @@ router.register('/report/getMonth', function (req, res) {
   });
   req.on('end', function () {
     let report = method.get('http://localhost:3000/getReport', "")
+    if (report == "") {
+      res.writeHead(404, { 'Content-Type': 'text/json'})
+      res.end();
+    }
+    report = JSON.parse(report)
 
     for (let i = 0; i < Object.keys(report.Doanh_thu_nam).length; i++) {
       if(report.Doanh_thu_nam[i].$.Nam == body.Nam) {
@@ -92,7 +104,7 @@ router.register('/report/getMonth', function (req, res) {
       }
     }
 
-    res.end("{}")
+    res.end()
   });
 });
 
@@ -106,7 +118,12 @@ router.register('/report/getYear', function (req, res) {
   });
   req.on('end', function () {
     let report = method.get('http://localhost:3000/getReport', "")
-
+    if (report == "") {
+      res.writeHead(404, { 'Content-Type': 'text/json'})
+      res.end();
+    }
+    report = JSON.parse(report)
+    
     for (let i = 0; i < Object.keys(report.Doanh_thu_nam).length; i++) {
       if(report.Doanh_thu_nam[i].$.Nam == body.Nam) {
         res.end(JSON.stringify(report.Doanh_thu_nam[i]))
@@ -114,7 +131,7 @@ router.register('/report/getYear', function (req, res) {
       }
     }
 
-    res.end("{}")
+    res.end()
   });
 });
 
