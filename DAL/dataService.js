@@ -22,12 +22,19 @@ router.register('/addPhieuDatCho', function (req, res) {
   res.end()
 });
 
+router.register('/getDSTaiKhoan', function (req, res) {
+  console.log(req.method + "  /getDSTaiKhoan     -------------   return DS tài khoản");
+  let data = getMethod.get_DSTaiKhoan();
+  res.writeHead(200, { 'Content-Type': 'text/plan' });
+  res.end(JSON.stringify(data));
+});
+
 router.register('/account/signup', function (req, res) {
   if (req.method === 'GET') {
-    let data = getMethod.get_DSTaiKhoan();
-    console.log(data);
-    res.writeHead(200, { 'Content-Type': 'text/plan' });
-    res.end(JSON.stringify(data));
+    // let data = getMethod.get_DSTaiKhoan();
+    // console.log(data);
+    // res.writeHead(200, { 'Content-Type': 'text/plan' });
+    // res.end(JSON.stringify(data));
   }
 
   if (req.method === 'POST') {

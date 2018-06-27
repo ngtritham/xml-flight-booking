@@ -6,10 +6,6 @@
   <Tai_khoan ID="3" username="tritham" password="123456" Ten="Nguyễn Trí Thâm" SDT="0932648591" Email="tritham@gmail.com" isAdmin="0"/>
   <Tai_khoan ID="4" username="duythang" password="123456" Ten="Nguyễn Duy Thắng" SDT="0912365845" Email="duythang@gmail.com" isAdmin="0"/>
   <Tai_khoan ID="5" username="phuongthao" password="123456" Ten="Trần Lê Phương Thảo" SDT="0936357951" Email="phuongthao@gmail.com" isAdmin="0"/>
-  <Tai_khoan ID=" " username="thuanthienky" password="sdsadsad" Ten="sdsad" SDT="asd" Email="hettientieu1997@gmail.com" isAdmin="0"/>
-  <Tai_khoan ID=" " username="abc" password="123456" Ten="test" SDT="0123456789" Email="a@gmail.com" isAdmin="0"/>
-  <Tai_khoan ID=" " username="+5+65+5+" password="654+62" Ten="test" SDT="123" Email="a@gmail.com" isAdmin="0"/>
-  <Tai_khoan ID=" " username="" password="" Ten="" SDT="" Email="" isAdmin="0"/>
-  <Tai_khoan ID=" " username="dsfsdf" password="fsdfdsf" Ten="fdfs" SDT="5435435" Email="a@gmail.com" isAdmin="0"/>
-  <Tai_khoan ID=" " username="1512528" password="fsdfdsf" Ten="fdfs" SDT="0123456789" Email="a@gmail.com" isAdmin="0"/>
+  <Tai_khoan ID=" " username="1512528" password="dasdasa" Ten="test" SDT="0123456789" Email="a@gmail.com" isAdmin="0"/>
+  <Tai_khoan ID=" " username="dfsdf" password="37251" Ten="test" SDT="dasd" Email="a@gmail.com" isAdmin="0"/>
 </Danh_sach_tai_khoan>

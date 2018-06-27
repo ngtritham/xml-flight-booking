@@ -37,8 +37,11 @@ router.register('/account/signup', function (req, res) {
   }
   
   else if (req.method == 'POST') {
-    let ds = method.get("http://localhost:3000/account/signup", "");
+    let ds = method.get("http://localhost:3000/getDSTaiKhoan", "");
     console.log(JSON.parse(ds));
+
+
+    
     let body
     req.on('data', function (data) {
       body = JSON.parse(data);
@@ -56,7 +59,7 @@ router.register('/account/signup', function (req, res) {
         return
 
 
-      method.post('http://localhost:3000/account', JSON.stringify(body))
+      method.post('http://localhost:3000/account/signup', JSON.stringify(body))
     });
   } else {
     console.log("Error BUS Service: http://localhost:3001/account/signup");
