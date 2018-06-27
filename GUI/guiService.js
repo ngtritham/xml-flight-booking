@@ -36,7 +36,7 @@ router.register('/account/signup', function (req, res) {
     });
     res.end(html);
   } else if (req.method === "POST") {
-    console.log(req.method + "   " + req.url);
+    //console.log(req.method + "   " + req.url);
     let body = '';
 
     req.on('data', function (data) {
@@ -59,7 +59,9 @@ router.register('/account/signup', function (req, res) {
         "Email": post.Email,
         "isAdmin": '0'
       }
-
+      console.log(JSON.stringify(newacc));
+      newacc = JSON.stringify(newacc)
+      
       method.post('http://localhost:3001/account/signup', newacc)
     });
 
@@ -68,6 +70,7 @@ router.register('/account/signup', function (req, res) {
     });
     res.end();
   }
+
 
 });
 

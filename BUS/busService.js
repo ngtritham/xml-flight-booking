@@ -31,7 +31,7 @@ router.register('/account/signup', function (req, res) {
   
   else if (req.method == 'POST') {
     let ds = method.get("http://localhost:3000/account/signup", "");
-    console.log(ds);
+    console.log(JSON.parse(ds));
     let body
     req.on('data', function (data) {
       body = JSON.parse(data);
@@ -47,7 +47,7 @@ router.register('/account/signup', function (req, res) {
         body.Email == undefined ||
         body.isAdmin == undefined)
         return
-
+        body = JSON.stringify(body);
       method.post('http://localhost:3000/account/signup', body)
     });
   } else {
