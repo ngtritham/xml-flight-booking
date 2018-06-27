@@ -12,7 +12,6 @@ router.register('/', function (req, res) {
 
 router.register('/getDSChuyenBay', function (req, res) {
   let data = getMethod.get_DSChuyenBay()
-  console.log(data);
   res.writeHead(200, { 'Content-Type': 'text/plan' });
   res.end(JSON.stringify(data))
 });
@@ -63,10 +62,10 @@ router.register('/flyingDetail', function (req, res) {
   res.end();
 });
 
-router.register('/report/getMonth', function (req, res) {
+router.register('/getReport', function (req, res) {
   let report = getMethod.get_MonthReport()
 
-  res.writeHead(200, { 'Content-Type': 'text/json' });
+  res.writeHead(200, { 'Content-Type': 'text/plan' });
   res.end(JSON.stringify(report));
 });
 

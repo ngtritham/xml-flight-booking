@@ -4,7 +4,7 @@ const fs = require('fs')
 const querystring = require('querystring');
 const method = require('../LIB/requestMethod')
 const URL = require('url')
-
+const xml2js = require("xml2js")
 const port = 3002;
 
 router.register('/', function (req, res) {
@@ -110,11 +110,36 @@ router.register('/report/monthlyReport', function (req, res) {
 });
 
 router.register('/report/getMonth', function (req, res) {
-  const {
-    pathname,
-    query
-  } = URL.parse(req.url, true);
-  method.post('http://localhost:3001/report/getMonth', query)
+
+  const { pathname, query } = URL.parse(req.url, true);
+
+  report = method.post('http://localhost:3001/report/getMonth', JSON.stringify(query))
+  if (report == "") {
+    res.writeHead(404, { 'Content-Type': 'text/xml'})
+    res.end();
+  }
+  report = JSON.parse(report)
+
+  res.writeHead(200, {
+    'Content-Type': 'text/xml'
+  });
+  res.end((new xml2js.Builder()).buildObject(report))
+});
+
+router.register('/report/getYear', function (req, res) {
+  const { pathname, query } = URL.parse(req.url, true);
+
+  report = method.post('http://localhost:3001/report/getYear', JSON.stringify(query))
+  if (report == "") {
+    res.writeHead(404, { 'Content-Type': 'text/xml'})
+    res.end();
+  }
+  report = JSON.parse(report)
+
+  res.writeHead(200, {
+    'Content-Type': 'text/xml'
+  });
+  res.end((new xml2js.Builder()).buildObject(report))
 });
 
 router.register('/report/yearlyReport', function (req, res) {
@@ -148,6 +173,12 @@ router.register('/booking/flightDetail', function (req, res) {
 router.register('/DSChuyenBay', function (req, res) {
   let DSChuyenBay = '';
   let ds = method.get('http://localhost:3001/DSChuyenBay', "");
+  if (ds == "") {
+    res.writeHead(404, { 'Content-Type': 'text/json'})
+    res.end();
+  }
+  ds = JSON.parse(ds)
+
   for (var i = 0; i < Object.keys(ds.Chuyen_bay).length; i++) {
     //Thế lực thần bí "$"
     console.log(ds.Chuyen_bay[i].$.STT)

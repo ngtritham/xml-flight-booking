@@ -32,9 +32,9 @@ module.exports.get_DSTaiKhoan = () => {
 
 module.exports.get_MonthReport = () => {
     let ret;
-    data = fs.readFileSync(__dirname + '/DATA/monthlyReport.xml');
+    data = fs.readFileSync(__dirname + '/DATA/totalReport.xml');
     xml2js.parseString(data, function (err, result) {
-        ret = result
+        ret = result.Bao_cao_doanh_thu
     });
 
     return ret;

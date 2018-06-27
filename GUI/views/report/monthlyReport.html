@@ -71,8 +71,8 @@
 
         <div class='row' id='FlyDetail'>
             <div class="list-group col-md-2">
-                <a href="/" class="list-group-item">Báo cáo doanh thu theo tháng</a>
-                <a href="#" class="list-group-item">Báo cáo doanh thu theo năm</a>
+                <a href="/report/monthlyReport" class="list-group-item">Báo cáo doanh thu theo tháng</a>
+                <a href="/report/yearlyReport" class="list-group-item">Báo cáo doanh thu theo năm</a>
             </div>
             <div id='chiTietChuyenBay' class="col-md-10">
                 <div class="panel panel-default">
@@ -112,7 +112,7 @@
                         </select>
                     </div>
                     <!-- Table -->
-                    <table class="table">
+                    <table id="reportMonth" class="table">
                         <tr>
                             <th>STT</th>
                             <th>Chuyến bay</th>
@@ -180,8 +180,22 @@
             let atts = ['Thang', 'Nam']
             let vals = [getMonth.options[getMonth.selectedIndex].value, getYear.options[getYear.selectedIndex].value]
 
+            document.getElementById('reportMonth').innerHTML = "<tr> <th>STT</th> <th>Chuyến bay</th> <th>Số vé</th> <th>Tỷ lệ</th> <th>Doanh thu</th> </tr>";
             requestApi('/report/getMonth', 'GET', atts, vals).then(function (data) {
-                console.log(data)
+                let ds = ""
+                let veban = data.getElementsByTagName('Ban_ve')
+                
+                for (let i = 0; i < veban.length; i++) {
+                    ds += "<tr> ";
+                    ds += "<td> " + (i + 1).toString() + "</td>";
+                    ds += "<td> " + veban[i].getAttribute('Ma_chuyen_bay') + "</td>";
+                    ds += "<td> " + veban[i].getAttribute('So_ve') + "</td>";
+                    ds += "<td> " + veban[i].getAttribute('Ty_le') + "</td>";
+                    ds += "<td> " + veban[i].getAttribute('Doanh_thu') + "</td>";
+                    ds += "</tr>";
+                }
+
+                document.getElementById('reportMonth').innerHTML += ds;
             });
         }
     </script>
