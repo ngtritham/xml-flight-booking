@@ -84,7 +84,7 @@
             </div>
 
 
-            <div id='chiTietChuyenBay' class="col-md-10">
+            <div id='showDataView' class="col-md-10">
                 <div class="panel panel-default">
                     <!-- Default panel contents -->
                     <div class="panel-heading">Tra cứu chuyến bay</div>
@@ -125,7 +125,97 @@
         crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
-    <script src="js/script.js"></script>
+    <script>
+        let flight;
+        const GUI_API = "http://localhost:3002";
+        let ret
+        var requestApi = (uri, method, att, data) => {
+            return new Promise((resole, reject) => {
+                if (method.toLowerCase() == 'get' && data) {
+                    uri += "?";
+                    let first = true;
+                    for (let i = 0; i < data.length; ++i) {
+                        if (first) {
+                            uri += att[i] + "=" + data[i];
+                            first = false;
+                        } else {
+                            uri += "&" + att[i] + "=" + data[i];
+                        }
+                    }
+                    data = null;
+                } else if (method.toLowerCase() == 'post' && data) {
+                    let tmp = ''
+                    for (let i = 0; i < att.length; ++i) {
+                        if (i > 0) tmp += '&'
+                        tmp += att[i] + '=' + data[i]
+                    }
+                    tmp.replace(' ', '%20')
+                    data = tmp
+                }
+                $.ajax({
+                    method: method,
+                    url: GUI_API + uri,
+                    data: data
+                }).done((result) => {
+                    resole(result)
+                })
+            })
+        }
+
+        // $("tr.table").click(function () {
+        //     var tableData = $(this).children("td").map(function () {
+        //         return $(this).text();
+        //     }).get();
+
+        //     console.log(tableData);
+        // });
+
+        $(document).ready(function () {
+            $('#pos').text('Hello everybody');
+
+            // $('#tableFlyDetail').on('click', 'button', function () {
+            //     var data = table.row($(this).parents('tr')).data();
+            //     alert(data[0] + "'s salary is: " + data[5]);
+            // });
+
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    parser = new DOMParser();
+                    xmlDoc = parser.parseFromString(this.responseText, "text/xml");
+                    xmlDoc = xmlDoc.getElementsByTagName('Chuyen_bay')
+                    console.log(xmlDoc)
+                    let tb = "<tr class=\"table\"> <th>STT</th> <th>Mã chuyến bay</th> <th>Sân bay đi</th> <th>Sân bay đến</th> <th>Khởi hành</th> <th>Thời gian</th> <th>Số ghế trống</th> <th>Số ghế đặt</th> <th></th> </tr>"
+
+                    for (let i = 0; i < xmlDoc.length; i++) {
+                        tb += "<tr>"
+                        tb += "<td>" + (i + 1).toString() + "</td>"
+                        tb += "<td>" + xmlDoc[i].getAttribute('Ma_chuyen_bay') + "</td>"
+                        tb += "<td>" + xmlDoc[i].getAttribute('San_bay_di') + "</td>"
+                        tb += "<td>" + xmlDoc[i].getAttribute('San_bay_den') + "</td>"
+                        tb += "<td>" + xmlDoc[i].getAttribute('Khoi_hanh') + "</td>"
+                        tb += "<td>" + xmlDoc[i].getAttribute('Thoi_gian') + "</td>"
+                        tb += "<td>" + xmlDoc[i].getAttribute('So_ghe_trong') + "</td>"
+                        tb += "<td>" + xmlDoc[i].getAttribute('So_ghe_dat') + "</td>"
+                        tb += "<td width=\"3%\"> <button type=\"button\" " + "onclick=\"showDetail(" + (i + 1).toString() + ")\"" +" class=\"btn btn-info\">Chi tiết</button> </td>"
+                        tb += "</tr>"
+                    }
+                    document.getElementById('tableFlyDetail').innerHTML = tb;
+                }
+            };
+            xhttp.open("GET", "/DSChuyenBay", true);
+            xhttp.send();
+        })
+
+        function showDetail(nrow) {
+            tableData = document.getElementById('tableFlyDetail').getElementsByTagName('tr')
+            flight = tableData[parseInt(nrow)].getElementsByTagName('td')
+            
+            requestApi('/booking/flightDetail', "GET", [''], [{}]).then(data => {
+                document.getElementById('showDataView').innerHTML = data;
+            })
+        }
+    </script>
 </body>
 
 </html>

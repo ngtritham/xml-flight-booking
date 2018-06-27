@@ -22,7 +22,7 @@ router.register('/DSChuyenBay', function (req, res) {
 
   res.writeHead(200, { 'Content-Type': 'text/json' });
 
-  res.end(JSON.stringify(ds.Danh_sach_chuyen_bay));
+  res.end(JSON.stringify(ds));
 });
 
 router.register('/account/signup', function (req, res) {

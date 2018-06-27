@@ -164,7 +164,7 @@ router.register('/booking/flightDetail', function (req, res) {
   console.log(req.method + "   " + req.url)
   let data = fs.readFileSync(__dirname + '/views/booking/flightDetail.html')
   res.writeHead(200, {
-    'Content-Type': 'text/html'
+    'Content-Type': 'text/plans'
   });
   res.end(data);
 });
@@ -178,18 +178,18 @@ router.register('/DSChuyenBay', function (req, res) {
   }
   ds = JSON.parse(ds)
 
-  for (var i = 0; i < Object.keys(ds.Chuyen_bay).length; i++) {
+  //for (var i = 0; i < Object.keys(ds.Chuyen_bay).length; i++) {
     //Thế lực thần bí "$"
-    console.log(ds.Chuyen_bay[i].$.STT)
-    let stt = (i + 1).toString()
-    DSChuyenBay += "<tr> <td>" + stt + "</td> <td>" + ds.Chuyen_bay[i].$.San_bay_di + "</td> <td>" + ds.Chuyen_bay[i].$.San_bay_den + "</td> <td>" + ds.Chuyen_bay[i].$.Khoi_hanh + "</td> <td>" + ds.Chuyen_bay[i].$.Thoi_gian + "</td> <td>" + ds.Chuyen_bay[i].$.So_ghe_trong + "</td> <td>" + ds.Chuyen_bay[i].$.So_ghe_dat + "</td>"
-    DSChuyenBay += "<td> <button value=" + ds.Chuyen_bay[i].$.Ma_chuyen_bay + " type=\"button\" class=\"btn btn-info\">Info</button> </td> </tr>"
-  }
+    //console.log(ds.Chuyen_bay[i].$.STT)
+    //let stt = (i + 1).toString()
+    //DSChuyenBay += "<tr> <td>" + stt + "</td> <td>" + ds.Chuyen_bay[i].$.San_bay_di + "</td> <td>" + ds.Chuyen_bay[i].$.San_bay_den + "</td> <td>" + ds.Chuyen_bay[i].$.Khoi_hanh + "</td> <td>" + ds.Chuyen_bay[i].$.Thoi_gian + "</td> <td>" + ds.Chuyen_bay[i].$.So_ghe_trong + "</td> <td>" + ds.Chuyen_bay[i].$.So_ghe_dat + "</td>"
+    //DSChuyenBay += "<td> <button value=" + ds.Chuyen_bay[i].$.Ma_chuyen_bay + " type=\"button\" class=\"btn btn-info\">Info</button> </td> </tr>"
+  //}
 
   res.writeHead(200, {
-    'Content-Type': 'text/html'
+    'Content-Type': 'text/xml'
   });
-  res.end(DSChuyenBay);
+  res.end((new xml2js.Builder()).buildObject(ds));
 });
 
 router.register('/booking', function (req, res) {
