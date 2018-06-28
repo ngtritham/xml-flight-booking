@@ -216,26 +216,37 @@ router.register('/DSChuyenBay', function (req, res) {
 });
 
 router.register('/booking', function (req, res) {
-  const { pathname, query } = URL.parse(req.url, true);
+  let body
+  req.on('data', function (data) {
+    body += data;
 
-  if (query.Ma_chuyen_bay == undefined ||
-    query.Hanh_khach == undefined ||
-    query.CMND == undefined ||
-    query.Dien_thoai == undefined ||
-    query.Hang_ve == undefined ||
-    query.Gia_tien == undefined) {
-    res.writeHead(404, {
-      'Content-Type': 'text/html'
-    });
-    res.end(data);
-    return;
-  }
+    // Too much POST data, kill the connection!
+    // 1e6 === 1 * Math.pow(10, 6) === 1 * 1000000 ~~~ 1MB
+    if (body.length > 1e6)
+      request.connection.destroy();
+  });
 
-  let result = method.post('http://localhost:3001/booking', JSON.stringify(query));
+  req.on('end', function () {
+    let query = querystring.parse(body);
+    if (query.Ma_chuyen_bay == undefined ||
+      query.Hanh_khach == undefined ||
+      query.CMND == undefined ||
+      query.Dien_thoai == undefined ||
+      query.Hang_ve == undefined) {
+      res.writeHead(404, {
+        'Content-Type': 'text/html'
+      });
+
+      res.end(data);
+      return;
+    }
+
+    let result = method.post('http://localhost:3001/booking', JSON.stringify(query));
+  })
 
   res.writeHead(200, {
-    'Content-Type': 'text/plan'
-  });
+      'Content-Type': 'text/plan'
+    });
   res.end(result);
 });
 

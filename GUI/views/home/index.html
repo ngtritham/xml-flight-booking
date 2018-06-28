@@ -197,7 +197,7 @@
 
                 bookingFlight = xmlDoc
                 info = document.getElementById('flightInfo').getElementsByTagName('p')
-                
+
                 info[0].innerHTML += xmlDoc.getAttribute('San_bay_di')
                 info[1].innerHTML += xmlDoc.getAttribute('San_bay_den')
                 info[2].innerHTML += xmlDoc.getAttribute('Ngay_gio')
@@ -222,7 +222,7 @@
         function onBooking() {
             requestApi('/booking/form', "GET", [''], [{}]).then(data => {
                 document.getElementById('showDataView').innerHTML = data;
-                document.getElementById('chuyenbay').value = flight[1].innerHTML
+                document.getElementById('Ma_chuyen_bay').value = flight[1].innerHTML
             })
         }
 
