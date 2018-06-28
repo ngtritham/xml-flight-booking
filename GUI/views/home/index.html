@@ -25,7 +25,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" id='brand' href="/home">Tham's Airline</a>
+                        <a class="navbar-brand" id='brand' href="/">Tham's Airline</a>
                     </div>
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -77,7 +77,7 @@
 
         <div class='row' id='FlyDetail'>
             <div class="list-group col-md-2">
-                <a href="#" class="list-group-item">Tra cứu chuyến bay</a>
+                <a href="/" class="list-group-item">Tra cứu chuyến bay</a>
                 <a href="#" class="list-group-item">Xem lịch bay</a>
                 <a href="#" class="list-group-item">Xem danh sách vé đặt</a>
                 <a href="#" class="list-group-item">Xem danh sách phiếu đặt chỗ</a>
@@ -127,6 +127,7 @@
         crossorigin="anonymous"></script>
     <script>
         let flight;
+        let bookingFlight;
         const GUI_API = "http://localhost:3002";
         let ret
         var requestApi = (uri, method, att, data) => {
@@ -144,13 +145,7 @@
                     }
                     data = null;
                 } else if (method.toLowerCase() == 'post' && data) {
-                    let tmp = ''
-                    for (let i = 0; i < att.length; ++i) {
-                        if (i > 0) tmp += '&'
-                        tmp += att[i] + '=' + data[i]
-                    }
-                    tmp.replace(' ', '%20')
-                    data = tmp
+                    return
                 }
                 $.ajax({
                     method: method,
@@ -162,13 +157,19 @@
             })
         }
 
-        // $("tr.table").click(function () {
-        //     var tableData = $(this).children("td").map(function () {
-        //         return $(this).text();
-        //     }).get();
+        function postData(url, data) {
+            let result
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    result = this.responseText
+                }
+            };
+            xhttp.open("POST", url, false);
+            xhttp.send(data);
 
-        //     console.log(tableData);
-        // });
+            return result
+        }
 
         $(document).ready(function () {
             $('#pos').text('Hello everybody');
@@ -178,6 +179,54 @@
             //     alert(data[0] + "'s salary is: " + data[5]);
             // });
 
+            loadListFlight()
+        })
+
+        function showDetail(nrow) {
+            tableData = document.getElementById('tableFlyDetail').getElementsByTagName('tr')
+            flight = tableData[parseInt(nrow)].getElementsByTagName('td')
+
+            requestApi('/booking/flightDetail', "GET", [''], [{}]).then(data => {
+                document.getElementById('showDataView').innerHTML = data;
+
+                data = { 'Ma_chuyen_bay': flight[1].innerHTML }
+                detail = postData(GUI_API + '/booking/flightDetail', JSON.stringify(data));
+                parser = new DOMParser();
+                xmlDoc = parser.parseFromString(detail, "text/xml");
+                xmlDoc = xmlDoc.getElementsByTagName('root')[0]
+
+                bookingFlight = xmlDoc
+                info = document.getElementById('flightInfo').getElementsByTagName('p')
+                
+                info[0].innerHTML += xmlDoc.getAttribute('San_bay_di')
+                info[1].innerHTML += xmlDoc.getAttribute('San_bay_den')
+                info[2].innerHTML += xmlDoc.getAttribute('Ngay_gio')
+                info[3].innerHTML += xmlDoc.getAttribute('Thoi_gian_bay')
+                info[4].innerHTML += xmlDoc.getAttribute('So_luong_ghe_hang_1')
+                info[5].innerHTML += xmlDoc.getAttribute('So_luong_ghe_hang_2')
+
+                xmlDoc = xmlDoc.getElementsByTagName('San_bay')
+                dsTrungGian = ""
+                for (i = 0; i < xmlDoc.length; i++) {
+                    dsTrungGian += "<tr>"
+                    dsTrungGian += "<td>" + (i + 1).toString() + "</td>"
+                    dsTrungGian += "<td>" + xmlDoc[i].getAttribute('San_bay_trung_gian') + "</td>"
+                    dsTrungGian += "<td>" + xmlDoc[i].getAttribute('Thoi_gian_dung') + "</td>"
+                    dsTrungGian += "<td>" + xmlDoc[i].getAttribute('Ghi_chu') + "</td>"
+                }
+
+                document.getElementById('sanBayTrungGian').innerHTML += dsTrungGian
+            })
+        }
+
+        function onBooking() {
+            requestApi('/booking/form', "GET", [''], [{}]).then(data => {
+                document.getElementById('showDataView').innerHTML = data;
+                document.getElementById('chuyenbay').value = flight[1].innerHTML
+            })
+        }
+
+        function loadListFlight() {
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
@@ -197,7 +246,7 @@
                         tb += "<td>" + xmlDoc[i].getAttribute('Thoi_gian') + "</td>"
                         tb += "<td>" + xmlDoc[i].getAttribute('So_ghe_trong') + "</td>"
                         tb += "<td>" + xmlDoc[i].getAttribute('So_ghe_dat') + "</td>"
-                        tb += "<td width=\"3%\"> <button type=\"button\" " + "onclick=\"showDetail(" + (i + 1).toString() + ")\"" +" class=\"btn btn-info\">Chi tiết</button> </td>"
+                        tb += "<td width=\"3%\"> <button type=\"button\" " + "onclick=\"showDetail(" + (i + 1).toString() + ")\"" + " class=\"btn btn-info\">Chi tiết</button> </td>"
                         tb += "</tr>"
                     }
                     document.getElementById('tableFlyDetail').innerHTML = tb;
@@ -205,15 +254,6 @@
             };
             xhttp.open("GET", "/DSChuyenBay", true);
             xhttp.send();
-        })
-
-        function showDetail(nrow) {
-            tableData = document.getElementById('tableFlyDetail').getElementsByTagName('tr')
-            flight = tableData[parseInt(nrow)].getElementsByTagName('td')
-            
-            requestApi('/booking/flightDetail', "GET", [''], [{}]).then(data => {
-                document.getElementById('showDataView').innerHTML = data;
-            })
         }
     </script>
 </body>

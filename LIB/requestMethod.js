@@ -22,7 +22,6 @@ module.exports.post = function (url, data) {
     //data -> json
     let ret;
 
-
     xhr.onreadystatechange = function () {
         if (this.readyState === 4) {
             console.log(url + " post DONE!");
@@ -33,6 +32,6 @@ module.exports.post = function (url, data) {
     xhr.open("POST", url, false);
     xhr.setRequestHeader('Content-type','application/json; charset=utf-8')
     xhr.send(data);
-
+    
     return ret;
 }

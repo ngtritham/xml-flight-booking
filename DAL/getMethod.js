@@ -26,6 +26,16 @@ module.exports.get_MonthReport = () => {
     return ret;
 }
 
+module.exports.get_FlightDetail = () => {
+    let ret;
+    data = fs.readFileSync(__dirname + '/DATA/flightSchedule.xml');
+    xml2js.parseString(data, function (err, result) {
+        ret = result
+    });
+
+    return ret;
+}
+
 module.exports.get_TicketInfo = () => {
     let ret;
     data = fs.readFileSync(__dirname + '/DATA/ticketInfo.xml');

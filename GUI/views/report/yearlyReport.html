@@ -136,13 +136,7 @@
                     }
                     data = null;
                 } else if (method.toLowerCase() == 'post' && data) {
-                    let tmp = ''
-                    for (let i = 0; i < att.length; ++i) {
-                        if (i > 0) tmp += '&'
-                        tmp += att[i] + '=' + data[i]
-                    }
-                    tmp.replace(' ', '%20')
-                    data = tmp
+                    return;
                 }
                 $.ajax({
                     method: method,

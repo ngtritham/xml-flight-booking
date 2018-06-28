@@ -78,13 +78,21 @@ router.register('/flyingDetail', function (req, res) {
     req.on('data', function (data) {
       body = JSON.parse(data);
     });
-    req.on('end', function () { });
-  }
+    req.on('end', function () {
+      ds = method.get('http://localhost:3000/flyingDetail')
+      if (ds != "")
+        ds = JSON.parse(ds)
 
-  res.writeHead(200, {
-    'Content-Type': 'text/plan'
-  });
-  res.end();
+      for (i = 0; i < Object.keys(ds.Lich_chuyen_bay).length; i++) {
+        if (ds.Lich_chuyen_bay[i].$.Ma_chuyen_bay == body.Ma_chuyen_bay) {
+          res.writeHead(200, {'Content-Type': 'text/json'});
+
+          res.end(JSON.stringify(ds.Lich_chuyen_bay[i]));
+          return
+        }
+      }
+    });
+  }
 });
 
 router.register('/getBookingInfo', function (req, res) {

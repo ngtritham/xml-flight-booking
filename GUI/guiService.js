@@ -161,12 +161,35 @@ router.register('/booking/ticket', function (req, res) {
 });
 
 router.register('/booking/flightDetail', function (req, res) {
-  console.log(req.method + "   " + req.url)
-  let data = fs.readFileSync(__dirname + '/views/booking/flightDetail.html')
-  res.writeHead(200, {
-    'Content-Type': 'text/plans'
-  });
-  res.end(data);
+  if (req.method == 'GET') {
+    console.log(req.method + "   " + req.url)
+    let data = fs.readFileSync(__dirname + '/views/booking/flightDetail.html')
+    res.writeHead(200, {
+      'Content-Type': 'text/plans'
+    });
+    res.end(data);
+  } else if (req.method == 'POST') {
+    let body
+    req.on('data', function (data) {
+      body = JSON.parse(data);
+    });
+    req.on('end', function (data) {
+      result = method.post('http://localhost:3001/flyingDetail', JSON.stringify(body))
+
+      if (result == "") {
+        res.writeHead(404, {
+          'Content-Type': 'text/plans'
+        });
+        res.end();
+      }
+
+      result = JSON.parse(result)
+      res.writeHead(200, {
+        'Content-Type': 'text/xml'
+      });
+      res.end((new xml2js.Builder()).buildObject(result));
+    });
+  }
 });
 
 router.register('/DSChuyenBay', function (req, res) {
@@ -179,11 +202,11 @@ router.register('/DSChuyenBay', function (req, res) {
   ds = JSON.parse(ds)
 
   //for (var i = 0; i < Object.keys(ds.Chuyen_bay).length; i++) {
-    //Thế lực thần bí "$"
-    //console.log(ds.Chuyen_bay[i].$.STT)
-    //let stt = (i + 1).toString()
-    //DSChuyenBay += "<tr> <td>" + stt + "</td> <td>" + ds.Chuyen_bay[i].$.San_bay_di + "</td> <td>" + ds.Chuyen_bay[i].$.San_bay_den + "</td> <td>" + ds.Chuyen_bay[i].$.Khoi_hanh + "</td> <td>" + ds.Chuyen_bay[i].$.Thoi_gian + "</td> <td>" + ds.Chuyen_bay[i].$.So_ghe_trong + "</td> <td>" + ds.Chuyen_bay[i].$.So_ghe_dat + "</td>"
-    //DSChuyenBay += "<td> <button value=" + ds.Chuyen_bay[i].$.Ma_chuyen_bay + " type=\"button\" class=\"btn btn-info\">Info</button> </td> </tr>"
+  //Thế lực thần bí "$"
+  //console.log(ds.Chuyen_bay[i].$.STT)
+  //let stt = (i + 1).toString()
+  //DSChuyenBay += "<tr> <td>" + stt + "</td> <td>" + ds.Chuyen_bay[i].$.San_bay_di + "</td> <td>" + ds.Chuyen_bay[i].$.San_bay_den + "</td> <td>" + ds.Chuyen_bay[i].$.Khoi_hanh + "</td> <td>" + ds.Chuyen_bay[i].$.Thoi_gian + "</td> <td>" + ds.Chuyen_bay[i].$.So_ghe_trong + "</td> <td>" + ds.Chuyen_bay[i].$.So_ghe_dat + "</td>"
+  //DSChuyenBay += "<td> <button value=" + ds.Chuyen_bay[i].$.Ma_chuyen_bay + " type=\"button\" class=\"btn btn-info\">Info</button> </td> </tr>"
   //}
 
   res.writeHead(200, {
@@ -214,6 +237,15 @@ router.register('/booking', function (req, res) {
     'Content-Type': 'text/plan'
   });
   res.end(result);
+});
+
+router.register('/booking/form', function (req, res) {
+  console.log(req.method + "   " + req.url)
+  let data = fs.readFileSync(__dirname + '/views/booking/reservation.html')
+  res.writeHead(200, {
+    'Content-Type': 'text/plans'
+  });
+  res.end(data);
 });
 
 // We need a server which relies on our router

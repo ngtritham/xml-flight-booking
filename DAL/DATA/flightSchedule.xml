@@ -6,4 +6,16 @@
             <San_bay STT="2" San_bay_trung_gian="Nova Scotia" Thoi_gian_dung="10 phút" Ghi_chu="Không có"/>
         </DS_San_bay_trung_gian>
     </Lich_chuyen_bay>
+    <Lich_chuyen_bay Ma_chuyen_bay="CB01" San_bay_di="Tân Sơn Nhất" San_bay_den="New York" Ngay_gio="22:00, 24/05/2018" Thoi_gian_bay="5 giờ 45 phút" So_luong_ghe_hang_1="40" So_luong_ghe_hang_2="110">
+        <DS_San_bay_trung_gian>
+            <San_bay STT="1" San_bay_trung_gian="Geneva" Thoi_gian_dung="15 phút" Ghi_chu="Không có"/>
+            <San_bay STT="2" San_bay_trung_gian="Nova Scotia" Thoi_gian_dung="10 phút" Ghi_chu="Không có"/>
+        </DS_San_bay_trung_gian>
+    </Lich_chuyen_bay>
+    <Lich_chuyen_bay Ma_chuyen_bay="CB02" San_bay_di="Tân Sơn Nhất" San_bay_den="New York" Ngay_gio="22:00, 24/05/2018" Thoi_gian_bay="5 giờ 45 phút" So_luong_ghe_hang_1="40" So_luong_ghe_hang_2="110">
+        <DS_San_bay_trung_gian>
+            <San_bay STT="1" San_bay_trung_gian="Geneva" Thoi_gian_dung="15 phút" Ghi_chu="Không có"/>
+            <San_bay STT="2" San_bay_trung_gian="Nova Scotia" Thoi_gian_dung="10 phút" Ghi_chu="Không có"/>
+        </DS_San_bay_trung_gian>
+    </Lich_chuyen_bay>
 </Danh_sach_Lich_chuyen_bay>

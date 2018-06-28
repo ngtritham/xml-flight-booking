@@ -2,28 +2,21 @@
     <!-- Default panel contents -->
     <div class="panel-heading">Mã chuyến bay</div>
 
-    <div class="col-md-3">
-        <p>Sân bay đi:...</p>
-        <p>Sân bay đến:...</p>
-        <p>Ngày giờ:...</p>
-        <p>Thời gian bay:...</p>
-        <p>Số lượng ghế hạng 1:...</p>
-        <p>Số lượng ghế hạng 2:...</p>
+    <div id="flightInfo" class="col-md-3">
+        <p>Sân bay đi: </p>
+        <p>Sân bay đến: </p>
+        <p>Ngày giờ: </p>
+        <p>Thời gian bay: </p>
+        <p>Số lượng ghế hạng 1: </p>
+        <p>Số lượng ghế hạng 2: </p>
     </div>
     <div class="col-md-7">
-        <table class="table">
+        <table id="sanBayTrungGian" class="table">
             <tr>
                 <th>STT</th>
                 <th>Sân bay trung gian</th>
                 <th>Thời gian dừng</th>
                 <th>Ghi chú</th>
-            </tr>
-
-            <tr>
-                <td>1</td>
-                <td>...</td>
-                <td>...</td>
-                <td>...</td>
             </tr>
         </table>
     </div>
@@ -32,8 +25,8 @@
 
 <div class="row">
     <div class="col-md-8 col-md-offset-4">
-        <button type="button" class="btn btn-success">Đặt vé</button>
+        <button onclick="onTicket()" type="button" class="btn btn-success">Đặt vé</button>
         <span style="margin-right: 20px"></span>
-        <button type="button" class="btn btn-warning">Đặt chỗ</button>
+        <button onclick="onBooking()" type="button" class="btn btn-warning">Đặt chỗ</button>
     </div>
 </div>

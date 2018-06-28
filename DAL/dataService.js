@@ -42,7 +42,12 @@ router.register('/account', function (req, res) {
 
 router.register('/flyingDetail', function (req, res) {
   if (req.method == 'GET') {
-    //auth
+    ret = getMethod.get_FlightDetail();
+    
+
+    res.writeHead(200, { 'Content-Type': 'text/json' });
+    res.end(JSON.stringify(ret.Danh_sach_Lich_chuyen_bay));
+    return
   }
 
   if (req.method == 'POST') {
